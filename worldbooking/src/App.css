@@ -1344,9 +1344,51 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 #sec1{
   width: 100%;
-  height: 150vh;
+  height: 230vh;
   border: 1px solid black;
 }
+
+#sec1head{
+  font-size: 30px;
+  margin-left: 6%; 
+}
+
+.sec1child1{
+  width: 300px;
+  height: 300px;
+  /* margin-left: -0.5%; */
+  margin: auto 5%;
+}
+
+.sec1child2 div .firstimg{
+  margin-left: 9px;
+}
+
+.sec1child2 div{
+  margin-left: 28%;
+}
+
+#marqdiv{
+  display: none;
+}
+
+#borderdiv{
+  display:  none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1356,6 +1398,8 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
   width: 100%;
   height: 50vh;
   border: 1px solid black;
+  font-weight: 600;
+  font-style: italic;
 }
 
 #sec2head{
@@ -1367,7 +1411,7 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
   width: 305px;
   height: 300px;
   margin-top: 25%;
-  margin-left: 3%;
+  margin-left: 5%;
   margin-right: 2%;
 }
 
@@ -1376,11 +1420,22 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 #sec3{
   width: 100%;
-  height: 200vh;
+  height: 100vh;
   border: 1px solid black;
   display: inline-block;
   position: relative;
 }
+
+#sec3maindiv video{
+  width: 280px;
+  height: 250px;
+  /* position: relative;
+  top: -141%; */
+  margin-left: -22%;
+  margin-top: -20%;
+}
+
+
 
 #sec3head{
   font-size: 50px;
@@ -1392,11 +1447,83 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 }
 
 #sec3rightcorner{
-  margin-left: 35%;
-  position: absolute;
-  top: 120px;
+  margin-left: 40%;
+  margin-top: -32%;
   
 }
+
+.sec3subhead1{
+  font-size: 28px;
+  margin-left: 2%;
+  font-weight: 700;
+}
+
+#sec3bottom1{
+  margin-top: 65%;
+  font-size: 25px;
+  margin-left: -3%;
+}
+
+#sec3bottom2{
+  margin-top: -94%;
+  font-size: 25px;
+  margin-left: 37%;
+}
+
+
+.sec3lasthead{
+  display: none;
+}
+
+.sec3rightd1{
+  width: 120px;
+  height: 15px;
+  margin-top: -5%;
+  margin-left: -10%;
+}
+
+.sec3rightd2{
+  width: 15px;
+  margin-top: -5%;
+  margin-left: 5%;
+  height: 130px;
+}
+
+.sec3leftd1{
+  width: 120px;
+  height: 15px;
+  margin-left: -26%;
+  margin-top: -280px;
+}
+
+.sec3leftd2{
+  width: 15px;
+  margin-top: -55%;
+  margin-left: -26%;
+  height: 130px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

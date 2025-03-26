@@ -161,3 +161,5 @@ function Singledetail(){
     )
 }
 export default Singledetail
+
+

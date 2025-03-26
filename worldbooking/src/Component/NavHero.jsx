@@ -27,7 +27,7 @@ function NavHero(){
             <div id="sec1maindiv">
                 <div className="sec1child1"></div>
                 <div className="sec1child2">
-                    <div> <div className="firstimg">USA</div><img src="cont1.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
+                    <div > <div className="firstimg">USA</div><img src="cont1.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
                     <div> <div className="firstimg">Dubai</div><img src="cont2.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>

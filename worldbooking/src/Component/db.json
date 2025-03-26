@@ -54,6 +54,27 @@
       "country": "Asia - India",
       "date": "2025-03-22",
       "mode": "Bus"
+    },
+    {
+      "id": "5ff3",
+      "name": "aman",
+      "contact": "6547896321",
+      "age": "30",
+      "day": "10",
+      "person": "22",
+      "mode": "Train",
+      "country": "Asia - China"
+    },
+    {
+      "id": "0247",
+      "name": "aman",
+      "contact": "6547896321",
+      "age": "30",
+      "day": "10",
+      "person": "22",
+      "country": "Asia - China",
+      "date": "2025-03-26",
+      "mode": "Bus"
     }
   ]
 }
