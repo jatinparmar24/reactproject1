@@ -439,7 +439,7 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 }
 
 #sec3head{
-  margin-left: 44%;
+  margin-left: 40%;
   font-size: 60px;
   margin-top: 0%;
 }
@@ -1303,12 +1303,13 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 }
 
 .signhead{
-  margin-top: 5%;
+  margin-top: 15%;
+  font-size: 35px;
 }
 
 .signcenter{
   width: 90%;
-  height: 80vh;
+  height: 70vh;
   margin-top: 15%;
   line-height: 35px;
   padding-top: 30px;
@@ -1326,11 +1327,12 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 .loginhead{
   margin-top: 5%;
+  font-size: 35px;
 }
 
 .logincenter{
   width: 90%;
-  height: 65vh;
+  height: 58vh;
   margin-top: 15%;
   line-height: 45px;
   padding-top: 30px;
@@ -1406,7 +1408,7 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 #sec2head{
   font-size: 50px;
-  margin-left: 15%;
+  margin-left: 12%;
 }
 
 #sec2 img{
@@ -1634,6 +1636,11 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 }
 
 
+#bookbotton{
+  height: 50px;
+  font-size: 20px;
+}
+
 
 
 
@@ -1643,12 +1650,20 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 #footer{
   width: 100%;
-  height: 50vh;
+  height: 48vh;
   border: 1px solid black;
+}
+
+#footmaindiv div{
+  align-items: center;
+  margin: 1%;
+  margin-left: 1%;
+  margin-right: 19%;
 }
 
 #footmaindiv div h2{
   font-size: 25px;
+  margin-right: 1%;
 }
 
 #footmaindiv div h4{
@@ -1657,20 +1672,176 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 
 .footicon{
-  font-size: 25px;
-  margin-left: 2.4%;
+  font-size: 28px;
+  margin-left: -20%;
+  margin-top: 2%;
+}
+
+
+.foothide{
+  display: none;
+}
+
+.iconhide{
+  display: none;
+}
+
+
+/* about forms */
+
+#asiasec{
+  width: 100%;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.asiafromhead{
+  font-size: 55px;
+  margin-left: 9%;
+}
+
+/* particular details of form */
+
+#asiasec .asialab1{
+  font-size: 28px;
+  margin-left: -4%;
+  margin-top: 10%;
+}
+
+#asiasec .asiainp1{
+  width: 180px;
+  height: 40px;
+  margin-left: -2%;
+  margin-top: 10%;
+  font-size: 20px;
+  padding-left: 3%;
 }
 
 
 
+#asiasec .asialab2{
+  font-size: 28px;
+  margin-left: -4%;
+  margin-top: -5%;
+}
+
+
+#asiasec .asiainp2{
+  width: 180px;
+  height: 40px;
+  margin-left: -7%;
+  margin-top: -5%;
+  font-size: 20px;
+  padding-left: 3%;
+}
+
+#asiasec .asialab3{
+  font-size: 28px;
+  margin-left: -4%;
+  margin-top: -3%;
+}
+
+
+#asiasec .asiainp3{
+  width: 180px;
+  height: 40px;
+  margin-left: -10%;
+  margin-top: -1%;
+  font-size: 20px;
+  padding-left: 3%;
+}
+
+#asiasec .asialab4{
+  font-size: 28px;
+  margin-left: -4%;
+  margin-top: -5%;
+}
+
+
+#asiasec .asiainp4{
+  width: 180px;
+  height: 40px;
+  margin-top: -3%;
+ 
+}
+
+#asiasec .asialab5{
+  font-size: 28px;
+  margin-left: -4%;
+  margin-top: -1%;
+}
+
+#asiasec .asiainp5{
+  width: 180px;
+  height: 40px;
+  margin-top: -3%;
+  margin-left: -2%;
+}
+
+
+#asiasec .asialab6{
+  font-size: 28px;
+  margin-left: -4%;
+  margin-top: -5%;
+}
+
+#asiasec .asiainp6{
+  width: 180px;
+  height: 40px;
+  margin-top: -3%;
+  margin-left: -10%;
+}
+
+
+#asiasec .asialist{
+  margin-top: 100%;
+  margin-right: 47%;
+}
+
+#asiasec #asiaoption{
+  margin-top: 80%;
+  font-size: 20px;
+  width: 200px;
+}
+
+#asiasec .asialab7{
+  font-size: 28px;
+  margin-left: -4%;
+  margin-top: -1%;
+}
+
+#asiasec .asiainp7{
+  width: 180px;
+  height: 40px;
+  margin-top: -2%;
+
+}
+
+
+#asiasec .asialab8{
+  font-size: 28px;
+  margin-left: -4%;
+  margin-top: 15%;
+}
 
 
 
+#asiasec .asiainp8{
+width: 190px;
+height: 40px;
+border-radius: 30px;
+margin-top: 14%;
+margin-left: -5%;
+padding-left: 3%;
+font-size: 20px;
+font-style: bold;
+}
 
-
-
-
-
+#asiasec .asiasub{
+  position: absolute;
+  left: 19%;
+  bottom: 2%;
+}
 
 
 

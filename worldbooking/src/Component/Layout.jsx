@@ -95,7 +95,7 @@ function Layout(){
                    
                 </div>
 
-                <div>
+                <div className="foothide" >
                     <h2>Topics</h2>
 
                     <h4>Travel</h4>
@@ -111,7 +111,7 @@ function Layout(){
                     <h4>Development</h4>
                     <h4>Data Analyst</h4>                  
                     <h4>Contect Officer</h4>
-                    <h4>World Wide Connection</h4>
+                    <h4>World Explore</h4>
                 </div>
 
 
@@ -122,7 +122,7 @@ function Layout(){
 
             <div className="footicon">
 
-                  <i>@World Tour ,123,New York</i>  <FcGoogle/> <FcContacts/> <FcDepartment/> <FcAdvertising/>
+                  <i>@World Tour ,123,New York</i>  <FcGoogle className="iconhide"/> <FcContacts className="iconhide"/> <FcDepartment className="iconhide"/> <FcAdvertising className="iconhide"/>
                 </div>
 
                 
