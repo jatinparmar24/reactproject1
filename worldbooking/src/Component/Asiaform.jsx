@@ -20,7 +20,10 @@ function Asiaform(){
 
     function detailsubmit(e){
       e.preventDefault()
-      axios.post('http://localhost:3000/tourism',insertfrom)
+      const formData = {...insertfrom, price: 2000}
+
+
+      axios.post('http://localhost:3000/tourism',formData)
       .then(res=>alert("Data Inserted"))
       todata('/Singledetail')
     }
@@ -68,7 +71,7 @@ function Asiaform(){
 
             <div>
               <label htmlFor="">Your Price</label>
-              <input type="number" name="price" value={2000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} />
+              <input type="number" name="price" value={2000} reaOnly onChange={instdetail} style={{marginLeft:"19px"}} />
 
               <label htmlFor="">Mode Of Travel</label>
               <select name="mode" id="" onChange={instdetail} style={{marginLeft:"-15px",width:"250px",borderRadius:"30px",height:"40px",  boxShadow: "inset 2px 2px 2px grey , 2px 2px 2px grey"}} >

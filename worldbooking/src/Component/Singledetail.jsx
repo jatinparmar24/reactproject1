@@ -81,8 +81,8 @@ function Singledetail(){
                 <td>{formdetail[formdetail.length - 1 ].mode}</td>
                 <td>{formdetail[formdetail.length - 1].price}</td>
                 <td>{formdetail[formdetail.length - 1 ].country}</td>
-                <td style={{backgroundColor:"orange"}}><button onClick={()=>(setshowform(true),seteditdetail(e))} style={{border:"none",backgroundColor:"orange"}}>Edit</button></td>
-                <td style={{backgroundColor:"orange"}}><button onClick={()=>delet(formdetail.id)} className="delbutton" style={{border:"none",backgroundColor:"orange"}}>Delete</button></td>
+                <td style={{backgroundColor:"orange"}}><button onClick={()=>(setshowform(true),seteditdetail(formdetail[formdetail.length - 1]))} style={{border:"none",backgroundColor:"orange"}}>Edit</button></td>
+                <td style={{backgroundColor:"orange"}}><button onClick={()=>delet(formdetail[formdetail.length - 1].id)} className="delbutton" style={{border:"none",backgroundColor:"orange"}}>Delete</button></td>
             </tr>
         )}
     </tbody>

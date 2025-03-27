@@ -323,10 +323,12 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
   grid-template-columns: repeat(auto-fill,230px);
   width: 70%;
   height: 500px;
+  
 
 }
 
 .sec1child2 div{
+  overflow: hidden;
   margin-top: 3%;
   margin-left: 5%;
   width: 200px;
@@ -1531,7 +1533,7 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 #sec4{
   width: 100%;
-  height: 390vh;
+  height: 370vh;
   border: 1px solid black;
 }
 
@@ -1651,6 +1653,12 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 #footmaindiv div h4{
   font-size: 15px;
+}
+
+
+.footicon{
+  font-size: 25px;
+  margin-left: 2.4%;
 }
 
 
