@@ -95,28 +95,6 @@
     },
     {
       "id": "7a6a"
-    },
-    {
-      "id": "54a5",
-      "name": "Jatin",
-      "age": "25",
-      "date": "2025-03-27",
-      "day": "2",
-      "contact": "3265985475",
-      "person": "6",
-      "mode": "Car",
-      "country": "Asia - China"
-    },
-    {
-      "id": "0646",
-      "name": "Jatin",
-      "age": "25",
-      "date": "2025-03-27",
-      "contact": "3265985475",
-      "day": "2",
-      "person": "4",
-      "mode": "Train",
-      "country": "Asia - India"
     }
   ]
 }

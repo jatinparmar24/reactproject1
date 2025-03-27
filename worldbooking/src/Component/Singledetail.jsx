@@ -1,16 +1,21 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 
 
 function Singledetail(){
 
+   let tohome=useNavigate()
+
     let[formdetail,setformdetail]=useState([])
 
    function delet(id){
+    
     axios.delete(`http://localhost:3000/tourism/${id}`)
     .then(res=>alert("Tour Cancelled"))
+    tohome('/')
+    id.preventDefault()
    }
 
     useEffect(()=>{

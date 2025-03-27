@@ -1070,6 +1070,13 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
   position: relative;
 }
 
+#asiasec .asiainp8{
+  margin-left: -1%;
+  width: 250px;
+  height: 40px;
+  border-radius: 30px;
+  box-shadow: inset 2px 2px 2px grey, 2px 2px 2px grey;
+}
 .asiafromhead{
   margin-top: 1%;
   margin-left: 25%;

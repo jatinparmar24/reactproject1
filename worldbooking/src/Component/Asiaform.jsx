@@ -109,5 +109,5 @@ function Asiaform(){
     )
 }
 
-// mode of travel style style={{marginLeft:"-15px",width:"250px",borderRadius:"30px",height:"40px",  boxShadow: "inset 2px 2px 2px grey , 2px 2px 2px grey"}}
+
 export default Asiaform
