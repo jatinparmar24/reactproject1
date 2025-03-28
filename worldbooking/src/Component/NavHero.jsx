@@ -1,7 +1,7 @@
 
 
 
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -10,8 +10,7 @@ import {FcAbout, FcAddImage, FcAddRow, FcAdvance, FcAnswers, FcAreaChart, FcBadD
 
 function NavHero(){
 
-
-
+  
 
 
 
@@ -214,7 +213,8 @@ function NavHero(){
        <h2> World's Biggest Continent Welcome's You </h2>
        <h2>A Place Filled With Many Different Culture and Tradition</h2>
        <h2>Places Never Explore Before Pack Your Bag And Start your Journey</h2>
-       <button id="bookbotton"><Link to='/Asiaform' style={{textDecoration:"none",color:"Black"}}>Click To Visit Asia</Link></button>
+       <button id="bookbotton"><Link to='/Asiaform' style={{textDecoration:"none",color:"Black"}}>Click To Visit Asia </Link></button>
+
 </div>
 
 <div id="sec4div2"></div>

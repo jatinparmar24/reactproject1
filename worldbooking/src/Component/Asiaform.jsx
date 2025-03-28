@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom"
 
 
 
-
 function Asiaform(){
 
   let todata=useNavigate()
@@ -20,8 +19,7 @@ function Asiaform(){
 
     function detailsubmit(e){
       e.preventDefault()
-      const formData = {...insertfrom, price: 2000}
-
+      const formData = {...insertfrom, price: 9000}
 
       axios.post('http://localhost:3000/tourism',formData)
       .then(res=>alert("Data Inserted"))

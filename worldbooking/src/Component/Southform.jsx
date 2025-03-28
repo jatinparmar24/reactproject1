@@ -20,7 +20,8 @@ function Southform(){
 
     function detailsubmit(e){
       e.preventDefault()
-      axios.post('http://localhost:3000/tourism',insertfrom)
+      const formData = {...insertfrom, price: 19000}
+      axios.post('http://localhost:3000/tourism',formData)
       .then(res=>alert("Data Inserted"))
       todata('/Singledetail')
     }

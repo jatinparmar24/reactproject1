@@ -15,7 +15,9 @@ function Singledetail(){
     axios.delete(`http://localhost:3000/tourism/${id}`)
     .then(res=>alert("Tour Cancelled"))
     tohome('/')
-    id.preventDefault()
+    axios.get('http://localhost:3000/tourism')
+    .then(res => setformdetail(res.data));
+
    }
 
     useEffect(()=>{
@@ -23,7 +25,7 @@ function Singledetail(){
         .then(res=>{
             setformdetail(res.data)
         })
-    },[delet])
+    },[])
 
    
     // for edit form
@@ -45,6 +47,10 @@ function Singledetail(){
         .then(res=>alert("Data Updated"))
        }
 
+       const lastBooking = formdetail[formdetail.length - 1];
+       const total = lastBooking ? lastBooking.price * lastBooking.day * lastBooking.person : 0;
+   
+
 
     return(
         <>
@@ -65,7 +71,6 @@ function Singledetail(){
             <th>Person</th>
             <th>Vehicle</th>
             <th>Total</th>
-           
             <th>Destination</th>
             <th style={{backgroundColor:"orangered"}}>Edit</th>
             <th style={{backgroundColor:"orangered"}}>Delete</th>
@@ -75,21 +80,26 @@ function Singledetail(){
     </thead>
 
     <tbody>
-        {formdetail.length > 0 && (
-            <tr key={formdetail[formdetail.length - 1 ].id}>
-                <td>{formdetail[formdetail.length - 1 ].name}</td>
-                <td>{formdetail[formdetail.length - 1 ].contact}</td>
-                <td>{formdetail[formdetail.length - 1 ].age}</td>
-                <td>{formdetail[formdetail.length - 1 ].day}</td>
-                <td>{formdetail[formdetail.length - 1 ].date}</td>
-                <td>{formdetail[formdetail.length - 1 ].person}</td>
-                <td>{formdetail[formdetail.length - 1 ].mode}</td>
-                <td>{formdetail[formdetail.length - 1].price}</td>
-                <td>{formdetail[formdetail.length - 1 ].country}</td>
-                <td style={{backgroundColor:"orange"}}><button onClick={()=>(setshowform(true),seteditdetail(formdetail[formdetail.length - 1]))} style={{border:"none",backgroundColor:"orange"}}>Edit</button></td>
-                <td style={{backgroundColor:"orange"}}><button onClick={()=>delet(formdetail[formdetail.length - 1].id)} className="delbutton" style={{border:"none",backgroundColor:"orange"}}>Delete</button></td>
-            </tr>
-        )}
+    {formdetail.length > 0 && (
+                            <tr key={lastBooking.id}>
+                                <td>{lastBooking.name}</td>
+                                <td>{lastBooking.contact}</td>
+                                <td>{lastBooking.age}</td>
+                                <td>{lastBooking.day}</td>
+                                <td>{lastBooking.date}</td>
+                                <td>{lastBooking.person}</td>
+                                <td>{lastBooking.mode}</td>
+                                <td>{total}</td> {/* Display the calculated total */}
+                                <td>{lastBooking.country}</td>
+                                <td style={{ backgroundColor: "orange" }}>
+                                    <button onClick={() => (setshowform(true), seteditdetail(lastBooking))} style={{ border: "none", backgroundColor: "orange" }}>Edit</button>
+                                </td>
+                                <td style={{ backgroundColor: "orange" }}>
+                                    <button onClick={() => delet(lastBooking.id)} className="delbutton" style={{ border: "none", backgroundColor: "orange" }}>Delete</button>
+                                </td>
+                            </tr>
+                        )}
+
     </tbody>
 
 </table>
@@ -144,14 +154,14 @@ function Singledetail(){
 
    <div> <input type="submit" className="singlesubmit" /></div>
 
-   <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
+   {/* <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
             <select name="country" id="asiaoption"  >
               <option value="Book Destination">Book Destination</option>
               <option value="India">India</option>
               <option value="China">China</option>
               <option value="Iraq">Iraq</option>
               <option value="Sri Lanka">Sri Lanka</option>
-            </select>
+            </select> */}
 
 
 

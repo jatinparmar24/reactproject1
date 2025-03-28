@@ -21,7 +21,8 @@ function Africaform(){
 
     function detailsubmit(e){
       e.preventDefault()
-      axios.post('http://localhost:3000/tourism',insertfrom)
+      const formData = {...insertfrom, price: 10000}
+      axios.post('http://localhost:3000/tourism',formData)
       .then(res=>alert("Data Inserted"))
       todata('/Singledetail')
     }
@@ -86,7 +87,7 @@ function Africaform(){
 
         
           <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
-          <select name="country" id="asiaoption" onChange={instdetail} >
+          <select name="country" id="asiaoption" required onChange={instdetail} >
             <option value="Book Destination" aria-readonly>Book Destination</option>
            <option value=" Africa - South Africa "> Africa - South Africa </option>
            <option value=" Africa - Algeria ">      Africa - Algeria </option>
