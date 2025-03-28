@@ -68,7 +68,7 @@ function Northform(){
 
           <div>
             <label htmlFor="" className="asialab7">Your Price</label>
-            <input type="number" name="price" value={2000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
+            <input type="number" name="price" value={20000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
 
             <label htmlFor="" className="asialab8">Mode Of Travel</label>
             <select name="mode" id="" onChange={instdetail}  className="asiainp8" >
@@ -87,10 +87,16 @@ function Northform(){
           <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
           <select name="country" id="asiaoption" onChange={instdetail} >
             <option value="Book Destination" aria-readonly>Book Destination</option>
-            <option value="Asia - India">Asia - India</option>
-            <option value="Asia - China">Asia - China</option>
-            <option value="Asia - Iraq">Asia - Iraq</option>
-            <option value="Asia - Sri Lanka">Asia - Sri Lanka</option>
+            <option value="North Am. - USA">North Am. - USA</option>
+            <option value="North Am. - Canada">North Am. - Canada</option>
+            <option value="North Am. - Mexico">North Am. - Mexico</option>
+            <option value="North Am. - Guatemala">North Am. - Guatemala</option>
+            <option value="North Am. - Panama">North Am. - Panama</option>
+            <option value="North Am. - Cuba">North Am. - Cuba</option>
+            <option value="North Am. - Costa Rica">North Am. - Costa Rica</option>
+            <option value="North Am. - Nicaragua">North Am. - Nicaragua</option>
+            <option value="North Am. - Barbados">North Am. - Barbados</option>
+            <option value="North Am. - Greenland">North Am. - Greenland</option>
           </select>
          
 

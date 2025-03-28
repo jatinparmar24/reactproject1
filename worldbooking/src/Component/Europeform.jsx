@@ -68,7 +68,7 @@ function Europeform(){
 
           <div>
             <label htmlFor="" className="asialab7">Your Price</label>
-            <input type="number" name="price" value={2000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
+            <input type="number" name="price" value={11000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
 
             <label htmlFor="" className="asialab8">Mode Of Travel</label>
             <select name="mode" id="" onChange={instdetail}  className="asiainp8" >
@@ -87,10 +87,16 @@ function Europeform(){
           <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
           <select name="country" id="asiaoption" onChange={instdetail} >
             <option value="Book Destination" aria-readonly>Book Destination</option>
-            <option value="Asia - India">Asia - India</option>
-            <option value="Asia - China">Asia - China</option>
-            <option value="Asia - Iraq">Asia - Iraq</option>
-            <option value="Asia - Sri Lanka">Asia - Sri Lanka</option>
+             <option value="Europe - Russia">Europe - Russia</option>
+             <option value="Europe - Ukraine">Europe - Ukraine</option>
+             <option value="Europe - France">Europe - France</option>
+             <option value="Europe - Spain">Europe - Spain</option>
+             <option value="Europe - Sweden">Europe - Sweden</option>
+             <option value="Europe - Germany">Europe - Germany</option>
+             <option value="Europe - Norway">Europe - Norway</option>
+             <option value="Europe - Poland">Europe - Poland</option>
+             <option value="Europe - Italy">Europe - Italy</option>
+             <option value="Europe - Belarus">Europe - Belarus</option>
           </select>
          
 

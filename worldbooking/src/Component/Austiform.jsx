@@ -68,7 +68,7 @@ function Australiaform(){
 
           <div>
             <label htmlFor="" className="asialab7">Your Price</label>
-            <input type="number" name="price" value={2000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
+            <input type="number" name="price" value={18000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
 
             <label htmlFor="" className="asialab8">Mode Of Travel</label>
             <select name="mode" id="" onChange={instdetail}  className="asiainp8" >
@@ -87,10 +87,16 @@ function Australiaform(){
           <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
           <select name="country" id="asiaoption" onChange={instdetail} >
             <option value="Book Destination" aria-readonly>Book Destination</option>
-            <option value="Asia - India">Asia - India</option>
-            <option value="Asia - China">Asia - China</option>
-            <option value="Asia - Iraq">Asia - Iraq</option>
-            <option value="Asia - Sri Lanka">Asia - Sri Lanka</option>
+            <option value="Australia - Fiji">            Australia - Fiji</option>
+            <option value="Australia - Vanuatu">         Australia - Vanuatu</option>
+            <option value="Australia - Somao">           Australia - Somao</option>
+            <option value="Australia - Kiribati">        Australia - Kiribati</option>
+            <option value="Australia - Tonga">           Australia - Tonga</option>
+            <option value="Australia - Palau">           Australia - Palau</option>
+            <option value="Australia - Tuvalu">          Australia - Tuvalu</option>
+            <option value="Australia - Nauru">           Australia - Nauru</option>
+            <option value="Australia - Marshall Island"> Australia - Marshall Island</option>
+            <option value="Australia - Solomon Island">  Australia - Solomon Island</option>
           </select>
          
 

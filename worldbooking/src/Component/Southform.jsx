@@ -68,7 +68,7 @@ function Southform(){
 
           <div>
             <label htmlFor="" className="asialab7">Your Price</label>
-            <input type="number" name="price" value={2000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
+            <input type="number" name="price" value={19000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
 
             <label htmlFor="" className="asialab8">Mode Of Travel</label>
             <select name="mode" id="" onChange={instdetail}  className="asiainp8" >
@@ -87,10 +87,16 @@ function Southform(){
           <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
           <select name="country" id="asiaoption" onChange={instdetail} >
             <option value="Book Destination" aria-readonly>Book Destination</option>
-            <option value="Asia - India">Asia - India</option>
-            <option value="Asia - China">Asia - China</option>
-            <option value="Asia - Iraq">Asia - Iraq</option>
-            <option value="Asia - Sri Lanka">Asia - Sri Lanka</option>
+              <option value="South Am. - Bolivia"> South Am. - Bolivia</option>
+              <option value="South Am. - Brazil"> South Am. - Brazil</option>
+              <option value="South Am. - Chile"> South Am. - Chile</option>
+              <option value="South Am. - Colombia"> South Am. - Colombia</option>
+              <option value="South Am. - Ecuador"> South Am. - Ecuador</option>
+              <option value="South Am. - Guyana"> South Am. - Guyana</option>
+              <option value="South Am. - Paraguay"> South Am. - Paraguay</option>
+              <option value="South Am. - Peru"> South Am. - Peru</option>
+              <option value="South Am. - Uruguay"> South Am. - Uruguay</option>
+              <option value="South Am. - Venezuela"> South Am. - Venezuela</option>
           </select>
          
 

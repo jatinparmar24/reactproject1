@@ -69,7 +69,7 @@ function Africaform(){
 
           <div>
             <label htmlFor="" className="asialab7">Your Price</label>
-            <input type="number" name="price" value={2000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
+            <input type="number" name="price" value={10000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
 
             <label htmlFor="" className="asialab8">Mode Of Travel</label>
             <select name="mode" id="" onChange={instdetail}  className="asiainp8" >
@@ -88,10 +88,16 @@ function Africaform(){
           <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
           <select name="country" id="asiaoption" onChange={instdetail} >
             <option value="Book Destination" aria-readonly>Book Destination</option>
-            <option value="Asia - India">Asia - India</option>
-            <option value="Asia - China">Asia - China</option>
-            <option value="Asia - Iraq">Asia - Iraq</option>
-            <option value="Asia - Sri Lanka">Asia - Sri Lanka</option>
+           <option value=" Africa - South Africa "> Africa - South Africa </option>
+           <option value=" Africa - Algeria ">      Africa - Algeria </option>
+           <option value=" Africa - Ethiopia">      Africa - Ethiopia</option>
+           <option value=" Africa - Uganda">        Africa - Uganda</option>
+           <option value=" Africa - Eritrea">       Africa - Eritrea</option>
+           <option value=" Africa - Botswana">      Africa - Botswana</option>
+           <option value=" Africa - Egypt">         Africa - Egypt</option>
+           <option value=" Africa - Namibia">       Africa - Namibia</option>
+           <option value=" Africa - Lesotho">       Africa - Lesotho</option>
+           <option value=" Africa - Kenya">         Africa - Kenya</option>
           </select>
          
 
