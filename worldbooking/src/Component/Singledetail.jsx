@@ -91,11 +91,11 @@ function Singledetail(){
                                 <td>{lastBooking.mode}</td>
                                 <td>{total}</td> {/* Display the calculated total */}
                                 <td>{lastBooking.country}</td>
-                                <td style={{ backgroundColor: "orange" }}>
-                                    <button onClick={() => (setshowform(true), seteditdetail(lastBooking))} style={{ border: "none", backgroundColor: "orange" }}>Edit</button>
+                                <td style={{ backgroundColor: "orangered" }}>
+                                    <button onClick={() => (setshowform(true), seteditdetail(lastBooking))} style={{ border: "none", backgroundColor: "orangered" }}>Edit</button>
                                 </td>
-                                <td style={{ backgroundColor: "orange" }}>
-                                    <button onClick={() => delet(lastBooking.id)} className="delbutton" style={{ border: "none", backgroundColor: "orange" }}>Delete</button>
+                                <td style={{ backgroundColor: "orangered" }}>
+                                    <button onClick={() => delet(lastBooking.id)} className="delbutton" style={{ border: "none", backgroundColor: "orangered" }}>Delete</button>
                                 </td>
                             </tr>
                         )}
@@ -138,11 +138,10 @@ function Singledetail(){
 
 
     <div>
-      <label htmlFor="">Your Price</label>
-      <input type="number" name="price" placeholder="Number Of Person's" value={2000} readOnly  onChange={editdata} style={{marginLeft:"10px"}}/>
+     
 
       <label htmlFor="">Mode Of Travel</label>
-      <select name="mode" id="" value={editdetail.mode} onChange={editdata} style={{marginLeft:"-15px",width:"250px",borderRadius:"30px",height:"40px",  boxShadow: "inset 2px 2px 2px grey , 2px 2px 2px grey"}} >
+      <select name="mode" id="" value={editdetail.mode} onChange={editdata} style={{marginLeft:"-15px",width:"250px",borderRadius:"30px",height:"40px",  boxShadow: "inset 2px 2px 2px grey , 2px 2px 2px grey" ,paddingLeft:"20px"}} >
         <option value="Select Vehicle" >Select Vehicle</option>
         <option value="Train">Train</option>
         <option value="Car">Car</option>
@@ -154,14 +153,6 @@ function Singledetail(){
 
    <div> <input type="submit" className="singlesubmit" /></div>
 
-   {/* <label htmlFor="" className="asialist">Choose Country</label> <br /> <br />
-            <select name="country" id="asiaoption"  >
-              <option value="Book Destination">Book Destination</option>
-              <option value="India">India</option>
-              <option value="China">China</option>
-              <option value="Iraq">Iraq</option>
-              <option value="Sri Lanka">Sri Lanka</option>
-            </select> */}
 
 
 

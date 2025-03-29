@@ -1,40 +1,6 @@
 {
   "tourism": [
     {
-      "id": "cb55",
-      "name": "Jatin parmar",
-      "contact": "3265985475",
-      "age": "25",
-      "day": "20",
-      "person": "8",
-      "date": "2025-03-22",
-      "mode": "Car",
-      "country": "Asia - India"
-    },
-    {
-      "id": "681c",
-      "name": "Jatin parmar",
-      "contact": "3265985475",
-      "age": "25",
-      "day": "20",
-      "person": "8",
-      "date": "2025-03-22",
-      "mode": "Car",
-      "country": "Asia - China"
-    },
-    {
-      "id": "3b06",
-      "name": "Jatin",
-      "contact": "6325985478",
-      "age": "25",
-      "day": "5",
-      "person": "5",
-      "date": "2025-03-29",
-      "mode": "Bus",
-      "country": "Europe - Ukraine",
-      "price": 11000
-    },
-    {
       "id": "38bd",
       "name": "Jatin",
       "contact": "6325985478",
@@ -93,6 +59,30 @@
       "mode": "Bus",
       "country": "North Am. - Canada",
       "price": 20000
+    },
+    {
+      "id": "4c01",
+      "name": "Jatin",
+      "contact": "6325985478",
+      "age": "25",
+      "day": "5",
+      "person": "5",
+      "date": "2025-03-29",
+      "mode": "Train",
+      "country": "North Am. - Guatemala",
+      "price": 20000
+    },
+    {
+      "id": "c55d",
+      "name": "Vijay",
+      "age": "30",
+      "date": "2025-03-29",
+      "contact": "6325985478",
+      "day": "10",
+      "person": "10",
+      "country": "Australia - Somao",
+      "mode": "Train",
+      "price": 18000
     }
   ]
 }

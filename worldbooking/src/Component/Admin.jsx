@@ -44,23 +44,29 @@ function Admin(){
     </thead>
 
     <tbody>
-        {formdata.map((e,index)=>{return<>
-         <tr key={index}>
-            <td>{index+1}</td>
-            <td>{e.name}</td>
-            <td>{e.contact}</td>
-            <td>{e.age}</td>
-            <td>{e.day}</td>
-            <td>{e.date}</td>
-            <td>{e.person}</td>
-            <td>{e.mode}</td>
-            <td>{e.country}</td>
-            <td>{e.person}*{e.day}</td>
-            <td style={{backgroundColor:"orange"}}><button onClick={()=>del(e.id)} style={{border:"none",backgroundColor:"orange"}}>Delete</button></td>
-            
+    {formdata.map((e, index) => {
+              // Calculate total price
+              const totalPrice = e.price * e.day * e.person;
 
-         </tr>
-        </>})}
+              return (
+                <tr key={index}>
+                  <td>{index + 1}</td>
+                  <td>{e.name}</td>
+                  <td>{e.contact}</td>
+                  <td>{e.age}</td>
+                  <td>{e.day}</td>
+                  <td>{e.date}</td>
+                  <td>{e.person}</td>
+                  <td>{e.mode}</td>
+                  <td>{e.country}</td>
+                  <td>{totalPrice}</td>
+                  <td style={{ backgroundColor: "orange" }}>
+                    <button onClick={() => del(e.id)} style={{ border: "none", backgroundColor: "orange" }}>Delete</button>
+                  </td>
+                </tr>
+              );
+            })}
+
 
     </tbody>
 
