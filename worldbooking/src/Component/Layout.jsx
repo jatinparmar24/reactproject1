@@ -59,7 +59,11 @@ function Layout(){
                    
                 </ul>
             </nav>
-            
+            <div id="menu">
+                <span class="bar1"></span>
+                <span class="bar2"></span>
+                <span class="bar3"></span>
+            </div>
 
 
             <Outlet/>
