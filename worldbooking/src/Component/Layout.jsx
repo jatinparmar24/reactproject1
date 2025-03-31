@@ -33,7 +33,7 @@ function Layout(){
                   
                 </ul>
                 <ul>
-                    <h1 style={{color:"black"}}> World Tour</h1>
+                    <h1 style={{color:"black"}} className="headlogo"> World Tour</h1>
                 </ul>
 
                 <ul className="navhome">
@@ -59,11 +59,7 @@ function Layout(){
                    
                 </ul>
             </nav>
-            <div id="menu">
-                <span class="bar1"></span>
-                <span class="bar2"></span>
-                <span class="bar3"></span>
-            </div>
+           
 
 
             <Outlet/>
@@ -109,7 +105,7 @@ function Layout(){
                     <h4>Automobile</h4>
                 </div>
 
-                <div>
+                <div className="lastfoot">
 
                     <h2>About Us</h2> <br />
 
