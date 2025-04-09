@@ -43,7 +43,7 @@
   text-align: center;
   line-height: 45px;
   border-radius: 100px;
-  box-shadow:  -3px 3px 2px grey , 3px 3px 2px grey , 3px -3px 2px grey;
+  box-shadow:  -1px 1px 2px grey inset , 1px 1px 2px grey inset, 1px -1px 2px grey inset;
   transition: transform 0.3s ease,translate 0.3s ease;
 
 }
@@ -51,25 +51,28 @@
 .signcenter h1{
   font-size: 32px;
   color: darkblue;
+  font-weight: 500;
+  margin-top: 1%;
 }
 
 .signcenter button{
   width: 200px;
   font-size: 29px;
   border-radius: 20px;
+  margin-top: -5%;
 }
 
 .signcenter button:hover{
-  transition: 2s;
+transition: 2s;
 width: 300px;
 font-size: 35px;
 border-radius: 40px;
 color: darkblue;
-box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
+box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 }
 
 .signcenter input{
-  width: 350px;
+  width: 300px;
   padding-left: 15px;
   font-size: 20px;
   border-radius: 20px;
@@ -77,19 +80,21 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 .signcenter input:hover{
 transition: 2s;
-width: 380px;
+width: 340px;
 font-size: 25px;
 border-radius: 40px;
 color: darkblue;
-box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
+box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 }
 
 
 .signsub{
+  /* margin-top: -8%; */
   width: 200px;
   color: black;
   background-color: #4264fe; 
   font-size: 40px;
+  font-weight: 600;
 }
 
 
@@ -132,7 +137,7 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
   text-align: center;
   line-height: 42px;
   border-radius: 100px;
-  box-shadow:  -3px 3px 2px grey , 3px 3px 2px grey , 3px -3px 2px grey;
+  box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
   transition: transform 0.3s ease,translate 0.3s ease;
  
 }
@@ -152,19 +157,19 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
   width: 200px;
   font-size: 29px;
   border-radius: 20px;
+  font-weight: 500;
 }
 
 .logincenter button:hover{
   transition: 2s;
-width: 300px;
+width: 250px;
 font-size: 35px;
 border-radius: 40px;
-/* background-color: lightskyblue; */
-box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
+box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 }
 
 .logincenter input{
-  width: 350px;
+  width: 320px;
   padding-left: 15px;
   font-size: 20px;
   border-radius: 20px;
@@ -173,12 +178,12 @@ box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
 
 .logincenter input:hover{
   transition: 2s;
-width: 380px;
+width: 350px;
 font-size: 25px;
 border-radius: 40px;
 color: darkblue;
 /* background-color: lightskyblue; */
-box-shadow: inset 3px 3px 2px grey,inset -3px -3px 2px grey;
+box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 }
 
 .loginsub{
