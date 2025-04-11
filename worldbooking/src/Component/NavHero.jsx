@@ -80,7 +80,7 @@ function NavHero(){
         <section id="sec2">
               
               
-          <h1 id='sec2head'>Slide Show</h1>
+          <h1 id='sec2head'>The Gallery</h1>
           
           <Carousel data-bs-theme="dark">
         <Carousel.Item>

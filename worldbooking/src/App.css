@@ -177,7 +177,7 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 }
 
 .logincenter input:hover{
-  transition: 2s;
+transition: 2s;
 width: 350px;
 font-size: 25px;
 border-radius: 40px;
@@ -196,47 +196,82 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 
 /* login page ends here */
 
-#navbar{
-  width: 100%;
-  height: 70px;
-  border: 1px solid black;
+/* Navbar base styles */
+.navbar {
+  height: 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1000;
+  background-color: rgba(177, 230, 248, 0.707);
+}
+
+/* Left section with logo */
+.navbar-left {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-  font-size: 30px;
-  background-color: rgba(141, 212, 172, 0.707);
-  
+  align-items: center;
+  gap: 50px;
 }
 
-#navbar ul{
-  margin-top: 1%;
-  text-shadow: 3px 3px 3px grey;
-}
-.navhome{
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 15px;
-  font-size: 25px;
-  
-  
+.globe-icon {
+  font-size: 60px;
+  top: 1%;
+  position: absolute;
 }
 
-.navhome  li{
-  width: auto;
-  height: fit-content;
-  border: 1px solid none;
+.logo-text {
+  font-size: 35px;
+  font-weight: bold;
+  margin-right: -265%;
   color: black;
-  border-radius: 10px;
-  padding: 5px;
-  position: relative ;
-  z-index: 1;
-  transition: 0.6s all ease;
-  cursor: pointer;
-  /* overflow: hidden; */
 }
 
-.navhome li::after{
+/* Navigation links */
+.navbar-links {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  gap: 50px;
+  margin-right: 15%;
+  font-size: 25px;
+  font-style: bold;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.navbar-link:hover {
+  color: #007bff;
+}
+
+.user-name {
+  font-weight: 500;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.icon {
+  font-size: 30px;
+  margin-left: 350%;
+}
+
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+
+
+ 
+
+.navbar li::after{
   content: "";
   position: absolute;
   z-index: -1;
@@ -249,22 +284,12 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
   transition: width 0.6s ease-in-out;
  
 }
-.navhome li:hover::after{
+.navbar li:hover::after{
   width: 100%;
   
 }
 
 
-.navicon{
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  gap: 35px;
-}
-
-#navbar ul{
-  list-style: none;
-}
 
 
 
@@ -1308,39 +1333,30 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 
 @media screen and (max-width:1000px){
 
-#navbar{
-  width: 100%;
-  height: 15vh;
 
-}
 
-#navbar .globeanimation{
-  width: 20px;
-  margin-top: 60%;
-  margin-left: -250%;
-}
 
-.headlogo{
-  font-size: 35px;
-  margin-left: -60%;
-}
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
 
-.navhome li{
-  font-size: 20px;
-  margin-top: -10%;
-  margin-left: -30%;
-}
+  .navbar-links.active {
+    display: flex;
+  }
 
-.navicon li{
-  margin-left: -20%;
-  margin-top: -8%;
-}
+  .hamburger {
+    display: block;
+  }
 
-#person-name{
-  font-size: 35px;
-  margin-top: -8%;
-  margin-left: -50%;
-}
+
 
 
 #signuppage{
