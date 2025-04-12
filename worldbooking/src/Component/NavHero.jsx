@@ -11,7 +11,17 @@ import {FcAbout, FcAddImage, FcAddRow, FcAdvance, FcAnswers, FcAreaChart, FcBadD
 function NavHero(){
 
   
-
+let tomove=useNavigate()
+const sumb=()=>{
+  let islogin=localStorage.getItem('find')
+  if(islogin){
+    tomove('/Asiaform')
+  }
+  else{
+    alert('Please Login First')
+    tomove('/Login')
+  }
+}
 
 
     return(
@@ -80,7 +90,7 @@ function NavHero(){
         <section id="sec2">
               
               
-          <h1 id='sec2head'>The Gallery</h1>
+          <h1 id='sec2head'>Gallery-View</h1>
           
           <Carousel data-bs-theme="dark">
         <Carousel.Item>
@@ -213,7 +223,8 @@ function NavHero(){
        <h2> World's Biggest Continent Welcome's You </h2>
        <h2>A Place Filled With Many Different Culture and Tradition</h2>
        <h2>Places Never Explore Before Pack Your Bag And Start your Journey</h2>
-       <button id="bookbotton"><Link to='/Asiaform' style={{textDecoration:"none",color:"Black"}}>Click To Visit Asia </Link></button>
+       {/* <button id="bookbotton"><Link to='/Asiaform' style={{textDecoration:"none",color:"Black"}}>Click To Visit Asia </Link></button> */}
+       <button id="bookbotton" onClick={sumb}>Click To Visit</button>
 
 </div>
 

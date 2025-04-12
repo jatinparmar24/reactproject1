@@ -16,7 +16,7 @@ function Login(){
 
   let[signupdata,setsignupdata]=useState("")
 
-
+  
 
 
 
@@ -24,6 +24,7 @@ function Login(){
   function inplog(e){
     const{name,value}=e.target
     setlogindata({...logindata,[name]:value})
+    localStorage.setItem("find",logindata)
   }
 
   useEffect(()=>{

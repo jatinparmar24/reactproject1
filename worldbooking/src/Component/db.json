@@ -83,6 +83,18 @@
       "country": "Australia - Somao",
       "mode": "Train",
       "price": 18000
+    },
+    {
+      "id": "76b4",
+      "name": "Jatin",
+      "contact": "3265985475",
+      "age": "25",
+      "day": "8",
+      "date": "2025-04-25",
+      "person": "15",
+      "mode": "Bus",
+      "country": "Asia - China",
+      "price": 9000
     }
   ]
 }
