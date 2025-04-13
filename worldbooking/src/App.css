@@ -49,10 +49,11 @@
 }
 
 .signcenter h1{
-  font-size: 32px;
+  font-size: 25px;
   color: darkblue;
   font-weight: 500;
-  margin-top: 1%;
+  margin-top: 5%;
+  margin-left: -30%;
 }
 
 .signcenter button{
@@ -73,9 +74,10 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 
 .signcenter input{
   width: 300px;
+  height: 40px;
   padding-left: 15px;
   font-size: 20px;
-  border-radius: 20px;
+  border-top-right-radius: 50px;
 }
 
 .signcenter input:hover{
@@ -423,39 +425,7 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 
 
 
-/* section 2 starts from here */
 
-#sec2{
-  width: 100%;
-  height: 85vh;
-  background-color: rgba(8, 137, 142, 0.778);
-  position: relative;
-
-}
-
-.d-block{
-  margin-top: 5%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  width: 1520px;
-  height: 610px;
-}
-
-#sec2head{
-  position: absolute;
-  z-index: 1;
-  margin-top: 1%;
-  margin-left: 40%;
-  font-size: 50px;
-  color: black;
-  text-shadow: 2px 2px 2px grey;
-  font-weight: 700;
-}
-
-
-
-
-/* section 2 ends here */
 
 
 /* section 3 starts from here */
@@ -1484,29 +1454,6 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 
 
 
-/* section 2 */
-
-#sec2{
-  width: 100%;
-  height: 50vh;
-  border: 1px solid black;
-  font-weight: 600;
-  font-style: italic;
-}
-
-#sec2head{
-  font-size: 50px;
-  margin-left: 12%;
-}
-
-#sec2 img{
-  width: 305px;
-  height: 300px;
-  margin-top: 25%;
-  margin-left: 5%;
-  margin-right: 2%;
-}
-
 
 /* section 3 starts here */
 
@@ -1521,8 +1468,6 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 #sec3maindiv video{
   width: 265px;
   height: 250px;
-  /* position: relative;
-  top: -141%; */
   margin-left: -22%;
   margin-top: -20%;
 }

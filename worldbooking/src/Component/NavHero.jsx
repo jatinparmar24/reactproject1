@@ -3,7 +3,6 @@
 
 import { Link, useNavigate } from "react-router-dom"
 
-import Carousel from 'react-bootstrap/Carousel';
 
 import {FcAbout, FcAddImage, FcAddRow, FcAdvance, FcAnswers, FcAreaChart, FcBadDecision,  FcBookmark, FcCalendar, FcCallback, FcCamera, FcComboChart, FcDataRecovery, FcLibrary, FcPackage, FcPhotoReel, FcPlanner, FcPodiumWithoutSpeaker, FcProcess, FcSelfie, FcSettings, FcShop, FcTodoList, FcTrademark, FcTwoSmartphones, FcVideoCall, FcVideoProjector, FcViewDetails} from 'react-icons/fc'
 
@@ -87,46 +86,7 @@ const sumb=()=>{
 
         </section>
               
-        <section id="sec2">
-              
-              
-          <h1 id='sec2head'>Gallery-View</h1>
-          
-          <Carousel data-bs-theme="dark">
-        <Carousel.Item>
-          <img
-            className="d-block"
-            src="cont11.jpeg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-           
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block"
-            src="cont9.jpeg"
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-          
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block"
-            src="cont7.jpeg"
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-           
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-              
-        </section>
-        {/* section 2 */}
+ 
 
         {/* section 3 */}
 
