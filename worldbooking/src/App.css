@@ -2,7 +2,7 @@
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
-  font-family: 'Geramond',serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 section{
@@ -10,98 +10,111 @@ section{
 }
 
 
-
-/* signup page starts here */
-
-#signuppage{
-  width: 100%;
-  height: 100vh;
-  border: 1px solid black;
-  position: relative;
-  background: linear-gradient(to bottom left,rgba(153, 246, 250, 0.529),rgba(34, 146, 150, 0.951));
+#signuppage {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f6d365, #fda085);
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.signhead{
-  position: absolute;
-  top: 1%;
-  color: darkblue;
-  font-weight: 700;
+/* Heading */
+.signhead {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 30px;
 }
 
-.signcenter:hover{
-  transform: scale(1.02);
-  translate: 0 -5px;
-}
-
-.signcenter{
-  width: 600px;
-  height: 740px;
-  border: 1px solid black;
-  margin-top: 3.5%;
-  background-color: rgba(255, 255, 255, 0.57);
-  position: absolute;
-  text-align: center;
-  line-height: 45px;
-  border-radius: 100px;
-  box-shadow:  -1px 1px 2px grey inset , 1px 1px 2px grey inset, 1px -1px 2px grey inset;
-  transition: transform 0.3s ease,translate 0.3s ease;
-
-}
-
-.signcenter h1{
-  font-size: 25px;
-  color: darkblue;
-  font-weight: 500;
-  margin-top: 5%;
-  margin-left: -30%;
-}
-
-.signcenter button{
-  width: 200px;
-  font-size: 29px;
+/* Form Container */
+.signcenter {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
   border-radius: 20px;
-  margin-top: -5%;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 480px;
+  animation: fadeIn 0.5s ease-in-out;
 }
 
-.signcenter button:hover{
-transition: 2s;
-width: 300px;
-font-size: 35px;
-border-radius: 40px;
-color: darkblue;
-box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
+/* Labels */
+.signcenter label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
 }
 
-.signcenter input{
-  width: 300px;
-  height: 40px;
-  padding-left: 15px;
-  font-size: 20px;
-  border-top-right-radius: 50px;
+/* Inputs */
+.signcenter input[type="text"],
+.signcenter input[type="email"],
+.signcenter input[type="password"],
+.signcenter input[type="number"],
+.signcenter input[type="tel"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
 }
 
-.signcenter input:hover{
-transition: 2s;
-width: 340px;
-font-size: 25px;
-border-radius: 40px;
-color: darkblue;
-box-shadow:  1px 1px 2px grey, -1px -1px 2px grey;
+.signcenter input:focus {
+  border-color: #f6a82b;
+  outline: none;
 }
 
+/* Submit Button */
+.signsub {
+  width: 100%;
+  margin-top: 30px;
+  padding: 12px;
+  background-color: #ff7e5f;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
 
-.signsub{
-  /* margin-top: -8%; */
-  width: 200px;
-  color: black;
-  background-color: #4264fe; 
-  font-size: 40px;
+.signsub:hover {
+  background-color: #e75c3c;
+}
+
+/* Login Link */
+.redirect {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+.redirect a {
+  color: #4264fe;
+  text-decoration: none;
   font-weight: 600;
 }
 
+.redirect a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 
@@ -109,129 +122,130 @@ box-shadow:  1px 1px 2px grey, -1px -1px 2px grey;
 /* sign up ends here */
 
 
-
-/* login page starts from here */
-
-#loginpage{
-  width: 100%;
-  height: 100vh;
-  border: 1px solid black;
-  background: linear-gradient(to bottom right,rgba(153, 246, 250, 0.529),rgba(34, 146, 150, 0.951));
+/* Login Section Layout */
+#loginpage {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: center;
   align-items: center;
+  gap: 40px;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom right, #c2e9fb, #a1c4fd);
+  background-attachment: fixed;
+  color: #2c3e50;
+
 }
 
-.loginside{
-  width: 500px;
-  height: 540px;
-  border: 1px solid black;
-  border-top-left-radius: 150px;
-  border-bottom-right-radius: 150px;
-  transition: transform 0.3s ease,translate 0.3s ease;
-}
-
-.loginside:hover{
-  transform: scale(1.02);
-  translate: 0 -5px;
-}
-
-.loginside h1{
-  margin-left: 30%;
-  font-weight: 700;
-  margin-top: 5%;
-}
-
-.loginside h2{
-  margin-left: 34%;
-  font-weight: 700;
-  margin-top: 5%;
-}
-
-.loginside p{
-  font-size: 25px;
-  margin-left: 5%;
-  margin-right: 3%;
-  margin-left: 8%;
-  line-height: 40px;
-}
-
-.loginhead{
-  position: absolute;
-  top: 6%;
-  color: darkblue;
-  font-weight: 700;
-}
-
-.logincenter{
-  color: black;
-  z-index: 1000;
-  width: 500px;
-  height: 540px;
-  border: 1px solid black;
-  padding-top: 30px;
+/* Main Heading */
+.loginhead {
+  width: 100%;
   text-align: center;
-  line-height: 42px;
-  border-top-right-radius: 150px;
-  border-bottom-left-radius: 150px;
-  box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
-  transition: transform 0.3s ease,translate 0.3s ease;
- 
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 
-.logincenter:hover{
-  transform: scale(1.02);
-  translate: 0 -5px;
+/* Reusable Box Styling */
+.logincenter,
+.loginside {
+  flex: 1 1 350px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.logincenter:hover,
+.loginside:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* Form Panel */
+.logincenter {
+  background-color: rgba(255, 255, 255, 0.95);
+  max-width: 400px;
+}
+
+/* Input Fields */
+.logincenter input[type="text"],
+.logincenter input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Submit Button */
+.loginsub {
+  width: 100%;
+  padding: 12px;
+  background-color: #4264fe;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.loginsub:hover {
+  background-color: #314cd0;
+}
+
+/* Sign Up Button */
+.logincenter button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4264fe;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logincenter button a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
+
+.logincenter button:hover {
+  background-color: #314cd0;
+}
+
+/* Welcome Panel */
+.loginside {
+  background-color: rgba(66, 100, 254, 0.9);
+  color: white;
+  max-width: 400px;
+}
+
+.loginside h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.loginside h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #dbe4ff;
+}
+
+.loginside p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #f2f4ff;
 }
 
 
-.logincenter h1{
-  font-size: 32px;
-  color: darkblue;
-  margin-left: -25%;
-}
-
-.logincenter button{
-  width: 290px;
-  font-size: 29px;
-  border-top-right-radius: 100px;
-  font-weight: 500;
-}
-
-.logincenter button:hover{
-  transition: 2s;
-width: 290px;
-font-size: 35px;
-border-radius: 40px;
-box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
-}
-
-.logincenter input{
-  width: 290px;
-  padding-left: 15px;
-  font-size: 20px;
-  /* border-radius: 20px; */
-  border-top-right-radius: 100px;
-
-}
-
-.logincenter input:hover{
-transition: 2s;
-width: 290px;
-font-size: 25px;
-border-radius: 40px;
-color: darkblue;
-/* background-color: lightskyblue; */
-box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
-}
-
-.loginsub{
-  width: 200px;
-  color: black;
-  background-color: #4264fe; 
-
-  
-}
 
 /* login page ends here */
 
@@ -1344,9 +1358,51 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 
 /* media query */
 
-@media screen and (max-width:1000px){
+@media screen and (max-width: 768px) {
+
+  /* login page */
+  #loginpage {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+
+  .loginhead {
+    font-size: 2rem;
+  }
+
+  .logincenter,
+  .loginside {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  .loginside {
+    text-align: center;
+  }
 
 
+  /* login page end */
+
+/* sign up */
+
+
+
+#signuppage {
+  padding: 20px 10px;
+}
+
+.signhead {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.signcenter {
+  max-width: 90%;
+}
+
+
+/* sign up end */
 
 .globe-icon{
   font-size: 50px;
@@ -1388,53 +1444,6 @@ box-shadow: inset 1px 1px 2px grey,inset -1px -1px 2px grey;
 
  
 
-
-
-#signuppage{
-  width: 100%;
-}
-
-.signhead{
-  margin-top: 15%;
-  font-size: 35px;
-}
-
-.signcenter{
-  width: 90%;
-  height: 70vh;
-  margin-top: 15%;
-  line-height: 35px;
-  padding-top: 30px;
-}
-
-.signcenter input{
-  width: 250px;
-}
-
-/* login starts here */
-
-#loginpage{
-  width: 100%;
-}
-
-.loginhead{
-  margin-top: 5%;
-  font-size: 35px;
-}
-
-.logincenter{
-  width: 90%;
-  height: 58vh;
-  margin-top: 15%;
-  line-height: 45px;
-  padding-top: 30px;
-}
-
-.logincenter input{
-  width: 250px;
-}
-
-/* login ends here */
 
 /* navbar starts here */
 

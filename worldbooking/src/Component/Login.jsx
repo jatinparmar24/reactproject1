@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
 
@@ -65,14 +64,14 @@ function Login(){
                      <h1>Enter Name</h1>
                      <input type="text" name="name" onChange={inplog} placeholder="Enter Your Name" required /> <br /> <br />
      
-                     <h1 style={{marginLeft:"-18%"}}>Enter Password </h1>
+                     <h1>Enter Password </h1>
                      <input type="text" name="password" onChange={inplog} placeholder="Enter Your Password" required /> <br /> <br />
      
                      <input type="submit" value="Login" className="loginsub" /><br /> <br />
      
-                     <h2 style={{color:"darkblue",fontWeight:"600"}}>Don't have An Account ?</h2>
+                     {/* <h2 style={{color:"darkblue",fontWeight:"600"}}>Don't have An Account ?</h2>
      
-                     <button style={{backgroundColor:"#4264fe"}}><Link to="/SignUp" style={{textDecoration:"none",color:"black"}}>Sign Up</Link></button>
+                     <button style={{backgroundColor:"#4264fe"}}><Link to="/SignUp" style={{textDecoration:"none",color:"black"}}>Sign Up</Link></button> */}
                 </form>
 
              </div>
@@ -83,9 +82,7 @@ function Login(){
               <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti distinctio rem iste quis nam nihil similique. Sunt minima magnam ea, nisi explicabo, obcaecati illo nobis commodi error aliquid, dolorem iusto? Quo eius ab dolores saepe cum quaerat, sint maiores! Fuga rem odio totam nobis molestias dolorum iusto, voluptatum velit maxime!</p>
         
 
-             </div>
-
-            
+             </div>           
           </section>
         </>
     )

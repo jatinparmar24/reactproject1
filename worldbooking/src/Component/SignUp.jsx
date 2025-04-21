@@ -1,5 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+
 
 function SignUp(){
 
@@ -25,39 +27,33 @@ function SignUp(){
 
 
         <>
-          <section id="signuppage">
-            <h1 className="signhead">Sign Up Form</h1>
-            <div className="signcenter">
-               
-               <form action="" onSubmit={signsubmit}>
+         <section id="signuppage">
+  <h1 className="signhead">Create Your Account</h1>
+  <div className="signcenter">
+    <form onSubmit={signsubmit}>
 
-                  <h1>Enter Name </h1>
-                   <input type="text"  name="name" onChange={inpsign} placeholder="Enter Your Name"  required/>
-                    
-                   <h1 style={{marginLeft:"-33%"}}>Enter Age </h1>
-                   <input type="text"  name="age" onChange={inpsign} placeholder="Enter Your Age"  required/>
-       
-                   <h1 style={{marginLeft:"-27%"}}>Enter Contact </h1>
-                   <input type="text"  name="contact" onChange={inpsign} placeholder="Enter Your Contact" required />
-       
-                   <h1 style={{marginLeft:"-28%"}}>Enter E-Mail </h1>
-                   <input type="text"  name="email" onChange={inpsign} placeholder="Enter Your E-Mail"  required/>
-       
-                   <h1 style={{marginLeft:"-24%"}}>Enter Password </h1>
-                   <input type="text"  name="password" onChange={inpsign} placeholder="Enter Your Password"  required/> <br /> <br />
-                   
-                   <input type="submit"  className="signsub"/> <br /> <br />
+      <label htmlFor="name">Full Name</label>
+      <input type="text" name="name" onChange={inpsign} placeholder="Enter your full name" required />
 
-               </form>
+      <label htmlFor="age">Age</label>
+      <input type="number" name="age" onChange={inpsign} placeholder="Enter your age" required />
 
-            
-            </div>
+      <label htmlFor="contact">Contact Number</label>
+      <input type="tel" name="contact" onChange={inpsign} placeholder="Enter your contact number" required />
 
-            
+      <label htmlFor="email">Email Address</label>
+      <input type="email" name="email" onChange={inpsign} placeholder="Enter your email" required />
 
+      <label htmlFor="password">Password</label>
+      <input type="password" name="password" onChange={inpsign} placeholder="Create a password" required />
 
+      <input type="submit" className="signsub" value="Sign Up" />
 
-          </section>
+      <p className="redirect">Already have an account? <Link to="/Login">Login here</Link></p>
+    </form>
+  </div>
+</section>
+
         </>
     )
 }
