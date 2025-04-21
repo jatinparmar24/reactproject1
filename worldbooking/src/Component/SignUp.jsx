@@ -28,7 +28,7 @@ function SignUp(){
 
         <>
          <section id="signuppage">
-  <h1 className="signhead">Create Your Account</h1>
+  <h1 className="signhead">Sign Up Form</h1>
   <div className="signcenter">
     <form onSubmit={signsubmit}>
 
