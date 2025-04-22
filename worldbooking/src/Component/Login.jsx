@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
+
 
 
 
@@ -11,6 +13,8 @@ function Login(){
 
   let[logindata,setlogindata]=useState({
     name:"",password:""
+   
+
   })
 
   let[signupdata,setsignupdata]=useState("")
@@ -31,26 +35,30 @@ function Login(){
        setsignupdata(signdetail)
      },[])
 
-     function loginsubmit(e){
-       e.preventDefault()
-
-       if (logindata.name === "admin" && logindata.password === "admin123"){
-        alert("admin login successfull")
-        let admindata = {name:"admin",role:"admin"}
-        localStorage.setItem("userdata",JSON.stringify(admindata))
-        localStorage.setItem("islogin","true")
-        tohome("/Admin")
+     function loginsubmit(e) {
+      e.preventDefault();
+    
+      if (logindata.name === "admin" && logindata.password === "admin123") {
+        alert("admin login successful");
+        let admindata = { name: "admin", role: "admin" };
+        localStorage.setItem("userdata", JSON.stringify(admindata));
+        localStorage.setItem('isLoggedIn', 'true');
+        tohome("/Admin");
         return;
-        
-       }
-
-       if(signupdata.name !=logindata.name && signupdata.password !=logindata.password){
-         alert("User Not Found")
-       }
-       else{
-          tohome('/')
-       }
-     }
+      }
+    
+      if (
+        signupdata.name !== logindata.name ||
+        signupdata.password !== logindata.password
+      ) {
+        alert("User Not Found");
+      } else {
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem("userdata", JSON.stringify(logindata));
+        tohome('/');
+      }
+    }
+    
 
 
 
@@ -69,9 +77,9 @@ function Login(){
      
                      <input type="submit" value="Login" className="loginsub" /><br /> <br />
      
-                     {/* <h2 style={{color:"darkblue",fontWeight:"600"}}>Don't have An Account ?</h2>
+                     <h2 style={{color:"darkblue",fontWeight:"600"}}>Don't have An Account </h2>
      
-                     <button style={{backgroundColor:"#4264fe"}}><Link to="/SignUp" style={{textDecoration:"none",color:"black"}}>Sign Up</Link></button> */}
+                     <button className="loginsub"><Link to="/SignUp" style={{textDecoration:"none",color:"black"}}>Sign Up</Link></button>
                 </form>
 
              </div>

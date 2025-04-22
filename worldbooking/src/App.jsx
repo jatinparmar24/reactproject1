@@ -15,6 +15,12 @@ import Europeform from './Component/Europeform'
 import Northform from './Component/Northform'
 import Southform from './Component/Southform'
 import Australiaform from './Component/Austiform'
+import Asiadetail from './Component/Asiadetail'
+import Africadetail from './Component/africadetail'
+import Europedetail from './Component/europedetail'
+import Northdetail from './Component/northdetail'
+import Southdetail from './Component/southdetail'
+import Australiadetail from './Component/australiadetail'
 
 
 
@@ -49,6 +55,13 @@ function App() {
       <Route path='/Australiaform' element={<Australiaform/>}/>
       <Route path='/Admin' element={<Admin/>}/>
       <Route path='/Singledetail' element={<Singledetail/>}/>
+      <Route path='/Asiadetail' element={<Asiadetail/>}/>
+      <Route path='/Africadetail' element={<Africadetail/>}/>
+      <Route path='/Europedetail' element={<Europedetail/>}/>
+      <Route path='/Australiadetail' element={<Australiadetail/>}/>
+      <Route path='/Northdetail' element={<Northdetail/>}/>
+      <Route path='/Southdetail' element={<Southdetail/>}/>
+
 
 
     </Routes>

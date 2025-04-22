@@ -43,7 +43,7 @@ function Africaform(){
     
           <div className="inputGroup">
             <label htmlFor="contact">Contact</label>
-            <input type="text" name="contact" placeholder="Phone or Email" onChange={instdetail} />
+            <input type="number" name="contact" placeholder="Enter Number" onChange={instdetail} />
           </div>
     
           <div className="inputGroup">
