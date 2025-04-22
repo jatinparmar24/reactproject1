@@ -31,82 +31,83 @@ function Africaform(){
   
     return(
       <>
-      <section id="asiasec">
+     <div className="asiadiv">
+      <section id="asiaSec">
+        <h1 className="asiaFormHead">Book Your Africa Tour</h1>
+    
+        <form className="asiaForm" onSubmit={detailsubmit}>
+          <div className="inputGroup">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" placeholder="Your Full Name" onChange={instdetail} autoFocus />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="contact">Contact</label>
+            <input type="text" name="contact" placeholder="Phone or Email" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="age">Age</label>
+            <input type="number" name="age" placeholder="Your Age" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="day">Number of Days</label>
+            <input type="number" name="day" placeholder="Trip Duration" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="date">Start Date</label>
+            <input type="date" name="date" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="person">Number of Persons</label>
+            <input type="number" name="person" placeholder="Travelers Count" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="price">Estimated Price</label>
+            <input type="number" name="price" value={10000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
 
-<h1 className="asiafromhead">Africa Continent</h1>
-
-<form action="" onSubmit={detailsubmit}>
-
-  <div>
-    <label htmlFor="" className="asialab1"> Enter Name</label>
-    <input type="text" name="name" placeholder="Enter Your Name" onChange={instdetail} className="asiainp1"/>
-
-    <label htmlFor="" className="asialab2"> Enter Contact </label>
-    <input type="text" name="contact" placeholder="Enter Number" onChange={instdetail} className="asiainp2" />
-  </div>
-
-  <br /><br />
-
-  <div>
-    <label htmlFor="" className="asialab3"> Enter Age</label>
-    <input type="number" name="age" placeholder="Enter Your Age" onChange={instdetail} style={{marginLeft:"25px"}} className="asiainp3"/>
-
-    <label htmlFor="" className="asialab4"> Enter Day</label>
-    <input type="number" name="day" placeholder="Number Of Day's" onChange={instdetail} style={{marginLeft:"53px"}} className="asiainp4"/>
-  </div>
-
-  <br /><br />
-
-  <div>
-    <label htmlFor="" className="asialab5"> Enter Date</label>
-    <input type="date" name="date" placeholder="Enter Date" onChange={instdetail} style={{marginLeft:"14px"}} className="asiainp5"/>
-
-    <label htmlFor="" className="asialab6">Enter Person's</label>
-    <input type="number" name="person" placeholder="Number Of Person's" onChange={instdetail} style={{marginLeft:"-5px"}} className="asiainp6"/>
-  </div>
-
-  <br /><br />
-
-  <div>
-    <label htmlFor="" className="asialab7">Your Price</label>
-    <input type="number" name="price" value={10000} readOnly onChange={instdetail} style={{marginLeft:"19px"}} className="asiainp7"/>
-
-    <label htmlFor="" className="asialab8">Mode Of Travel</label>
-    <select name="mode" onChange={instdetail} className="asiainp8">
-      <option value="Select Vehicle">Select Vehicle</option>
-      <option value="Train">Train</option>
-      <option value="Car">Car</option>
-      <option value="Bus">Bus</option>
-    </select>
-  </div>
-
-  <br /><br />
-
-  <label htmlFor="" className="asialist">Choose Country</label>
-  <br /><br />
-  <select name="country" id="asiaoption" onChange={instdetail}>
-    <option value="Book Destination">Book Destination</option>
-    <option value="Africa - South Africa">Africa - South Africa</option>
-    <option value="Africa - Algeria">Africa - Algeria</option>
-    <option value="Africa - Ethiopia">Africa - Ethiopia</option>
-    <option value="Africa - Uganda">Africa - Uganda</option>
-    <option value="Africa - Eritrea">Africa - Eritrea</option>
-    <option value="Africa - Botswana">Africa - Botswana</option>
-    <option value="Africa - Egypt">Africa - Egypt</option>
-    <option value="Africa - Namibia">Africa - Namibia</option>
-    <option value="Africa - Lesotho">Africa - Lesotho</option>
-    <option value="Africa - Kenya">Africa - Kenya</option>
-  </select>
-
-  <div>
-    <input type="submit" className="asiasub"/>
-  </div>
-
-</form>
-
-</section>
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="mode">Mode of Travel</label>
+            <select name="mode" onChange={instdetail}>
+              <option value="">Select Vehicle</option>
+              <option value="Train">Train</option>
+              <option value="Car">Car</option>
+              <option value="Bus">Bus</option>
+            </select>
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="country">Destination Country</label>
+            <select name="country" onChange={instdetail}>                  
+                <option value="Book Destination">Book Destination</option>
+                <option value="Africa - South Africa">Africa - South Africa</option>
+                <option value="Africa - Algeria">Africa - Algeria</option>
+                <option value="Africa - Ethiopia">Africa - Ethiopia</option>
+                <option value="Africa - Uganda">Africa - Uganda</option>
+                <option value="Africa - Eritrea">Africa - Eritrea</option>
+                <option value="Africa - Botswana">Africa - Botswana</option>
+                <option value="Africa - Egypt">Africa - Egypt</option>
+                <option value="Africa - Namibia">Africa - Namibia</option>
+                <option value="Africa - Lesotho">Africa - Lesotho</option>
+                <option value="Africa - Kenya">Africa - Kenya</option>
+            </select>
+          </div>
+    
+          <div className="submitBtn">
+            <input type="submit" value="Book Now" />
+          </div>
+        </form>
+      </section>
+    </div>
 
       </>
   )
 }
 export default Africaform
+

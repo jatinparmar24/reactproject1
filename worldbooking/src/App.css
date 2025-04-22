@@ -1212,96 +1212,97 @@ h4 {
 /* form details starts from here */
 
 /* asia form  */
-
-#asiasec{
+/* Fullscreen gradient background */
+.asiadiv {
   width: 100%;
   height: 100vh;
-  border: 1px solid black;
-  background: linear-gradient(to bottom left,rgba(153, 246, 250, 0.529),rgba(34, 146, 150, 0.951));
-  position: relative;
-}
-
-#asiasec .asiainp8{
-  margin-left: -1%;
-  width: 250px;
-  height: 40px;
-  border-radius: 30px;
-  box-shadow: inset 2px 2px 2px grey, 2px 2px 2px grey;
-}
-.asiafromhead{
-  margin-top: 1%;
-  margin-left: 25%;
-  font-size: 100px;
-  background: linear-gradient(to bottom right,orangered,darkblue,red,cyan,green);
-  background-size: 100%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#asiasec div{
-  margin-top: 2.8%;
-  margin-left: 5%;
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0, #7986cb);
   display: flex;
-  justify-content: left;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 70px;
-  font-size: 24px;
+  justify-content: center;
+  padding: 20px;
+
 }
 
-#asiasec label{
-  color: darkblue;
-  font-size: 30px;
+/* Glass-like section inside gradient */
+#asiaSec {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 750px;
+
+}
+
+/* Heading */
+.asiaFormHead {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #0d47a1;
+  font-weight: 700;
+}
+
+/* Form grid */
+.asiaForm {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  margin-bottom: 6px;
   font-weight: 600;
+  color: #333;
 }
 
-#asiasec div input{
-  width: 250px;
-  height: 45px;
-  padding-left: 10px;
-  font-size: 22px;
-  border-radius: 25px;
-  box-shadow: inset 2px 2px 2px grey , 2px 2px 2px grey;
+.inputGroup input,
+.inputGroup select {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  
 }
 
-.asiasub{
-  position: absolute;
-  bottom: 10%;
-  right: 54%;
-  background-color: #4264fe; 
-  overflow: hidden;
+.inputGroup input:focus,
+.inputGroup select:focus {
+  border-color: #0d47a1;
+  box-shadow: 0 0 5px rgba(13, 71, 161, 0.3);
+  outline: none;
 }
 
-.asiasub:hover{
-  color: white;
-  transition: 3s;
-  transform: scale(1.1);
-  background: linear-gradient(to right,lightskyblue,darkblue);
+/* Submit button styling */
+.submitBtn {
+  grid-column: 1 / -1;
+  text-align: center;
 }
 
-.asiaconti{
-  position: absolute;
-  top: 660px;
+.submitBtn input {
+  background: #0d47a1;
+  color: #fff;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-.asialist{
-  position: absolute;
-  right: 5%;
-  top: 33%;
+.submitBtn input:hover {
+  background: #08306b;
 }
 
-#asiaoption{
-  position: absolute;
-  padding-left: 10px;
-  width: 230px;
-  height: 35px;
-  border-radius: 30px;
-  font-size: 25px;
-  box-shadow: inset 2px 2px 2px grey , 2px 2px 2px grey;
-  right: 4%;
-  top: 42%;
-}
+
 /* asia continent */
 
 
@@ -1722,159 +1723,44 @@ h4 {
 
 /* about forms */
 
-#asiasec{
+.asiadiv {
+  padding: 30px 15px;
+}
+
+#asiaSec {
+  padding: 30px 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.asiaFormHead {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.asiaForm {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputGroup {
   width: 100%;
-  height: 100vh;
-  border: 1px solid black;
 }
 
-.asiafromhead{
-  font-size: 55px;
-  margin-left: 9%;
+.inputGroup input,
+.inputGroup select {
+  font-size: 1rem;
+  padding: 10px;
 }
 
-/* particular details of form */
-
-#asiasec .asialab1{
-  font-size: 28px;
-  margin-left: -4%;
-  margin-top: 10%;
+.submitBtn input {
+  width: 100%;
+  font-size: 1rem;
+  padding: 12px;
 }
 
-#asiasec .asiainp1{
-  width: 180px;
-  height: 40px;
-  margin-left: -2%;
-  margin-top: 10%;
-  font-size: 20px;
-  padding-left: 3%;
-}
-
-
-
-#asiasec .asialab2{
-  font-size: 28px;
-  margin-left: -4%;
-  margin-top: -5%;
-}
-
-
-#asiasec .asiainp2{
-  width: 180px;
-  height: 40px;
-  margin-left: -7%;
-  margin-top: -5%;
-  font-size: 20px;
-  padding-left: 3%;
-}
-
-#asiasec .asialab3{
-  font-size: 28px;
-  margin-left: -4%;
-  margin-top: -3%;
-}
-
-
-#asiasec .asiainp3{
-  width: 180px;
-  height: 40px;
-  margin-left: -10%;
-  margin-top: -1%;
-  font-size: 20px;
-  padding-left: 3%;
-}
-
-#asiasec .asialab4{
-  font-size: 28px;
-  margin-left: -4%;
-  margin-top: -5%;
-}
-
-
-#asiasec .asiainp4{
-  width: 180px;
-  height: 40px;
-  margin-top: -3%;
- 
-}
-
-#asiasec .asialab5{
-  font-size: 28px;
-  margin-left: -4%;
-  margin-top: -1%;
-}
-
-#asiasec .asiainp5{
-  width: 180px;
-  height: 40px;
-  margin-top: -3%;
-  margin-left: -2%;
-}
-
-
-#asiasec .asialab6{
-  font-size: 28px;
-  margin-left: -4%;
-  margin-top: -5%;
-}
-
-#asiasec .asiainp6{
-  width: 180px;
-  height: 40px;
-  margin-top: -3%;
-  margin-left: -10%;
-}
-
-
-#asiasec .asialist{
-  margin-top: 100%;
-  margin-right: 47%;
-}
-
-#asiasec #asiaoption{
-  margin-top: 80%;
-  font-size: 20px;
-  width: 200px;
-}
-
-#asiasec .asialab7{
-  font-size: 28px;
-  margin-left: -4%;
-  margin-top: -1%;
-}
-
-#asiasec .asiainp7{
-  width: 180px;
-  height: 40px;
-  margin-top: -2%;
-
-}
-
-
-#asiasec .asialab8{
-  font-size: 28px;
-  margin-left: -4%;
-  margin-top: 15%;
-}
-
-
-
-#asiasec .asiainp8{
-width: 190px;
-height: 40px;
-border-radius: 30px;
-margin-top: 14%;
-margin-left: -5%;
-padding-left: 3%;
-font-size: 20px;
-font-style: bold;
-}
-
-#asiasec .asiasub{
-  position: absolute;
-  left: 19%;
-  bottom: 2%;
-}
 
 
 

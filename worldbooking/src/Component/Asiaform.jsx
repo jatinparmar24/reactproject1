@@ -29,74 +29,83 @@ function Asiaform(){
 
   
     return(
-        <>
-        <section id="asiasec">
-  <h1 className="asiafromhead">Asia Continent</h1>
-
-  <form className="asiaform" onSubmit={detailsubmit}>
-    <div>
-      <label htmlFor="name" className="asialab1">Enter Name</label>
-      <input type="text" name="name" placeholder="Enter Your Name" onChange={instdetail} className="asiainp1" />
-
-      <label htmlFor="contact" className="asialab2">Enter Contact</label>
-      <input type="text" name="contact" placeholder="Enter Number" onChange={instdetail} className="asiainp2" />
+      <div className="asiadiv">
+      <section id="asiaSec">
+        <h1 className="asiaFormHead">Book Your Asia Tour</h1>
+    
+        <form className="asiaForm" onSubmit={detailsubmit}>
+          <div className="inputGroup">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" placeholder="Your Full Name" onChange={instdetail} autoFocus />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="contact">Contact</label>
+            <input type="text" name="contact" placeholder="Phone or Email" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="age">Age</label>
+            <input type="number" name="age" placeholder="Your Age" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="day">Number of Days</label>
+            <input type="number" name="day" placeholder="Trip Duration" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="date">Start Date</label>
+            <input type="date" name="date" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="person">Number of Persons</label>
+            <input type="number" name="person" placeholder="Travelers Count" onChange={instdetail} />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="price">Estimated Price</label>
+            <input type="number" name="price" value={9000} readOnly />
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="mode">Mode of Travel</label>
+            <select name="mode" onChange={instdetail}>
+              <option value="">Select Vehicle</option>
+              <option value="Train">Train</option>
+              <option value="Car">Car</option>
+              <option value="Bus">Bus</option>
+            </select>
+          </div>
+    
+          <div className="inputGroup">
+            <label htmlFor="country">Destination Country</label>
+            <select name="country" onChange={instdetail}>
+                   <option value="Book Destination">Book Destination</option>
+                   <option value="Asia - India">Asia - India</option>
+                   <option value="Asia - China">Asia - China</option>
+                   <option value="Asia - Iraq">Asia - Iraq</option>
+                   <option value="Asia - Sri Lanka">Asia - Sri Lanka</option>
+                   <option value="Asia - Georgia">Asia - Georgia</option>
+                   <option value="Asia - Cyprus">Asia - Cyprus</option>
+                   <option value="Asia - Thailand">Asia - Thailand</option>
+                   <option value="Asia - Brunie">Asia - Brunie</option>
+                   <option value="Asia - Turkey">Asia - Turkey</option>
+                   <option value="Asia - Nepal">Asia - Nepal</option>
+            </select>
+          </div>
+    
+          <div className="submitBtn">
+            <input type="submit" value="Book Now" />
+          </div>
+        </form>
+      </section>
     </div>
-
-    <div>
-      <label htmlFor="age" className="asialab3">Enter Age</label>
-      <input type="number" name="age" placeholder="Enter Your Age" onChange={instdetail} className="asiainp3" />
-
-      <label htmlFor="day" className="asialab4">Enter Day</label>
-      <input type="number" name="day" placeholder="Number Of Day's" onChange={instdetail} className="asiainp4" />
-    </div>
-
-    <div>
-      <label htmlFor="date" className="asialab5">Enter Date</label>
-      <input type="date" name="date" onChange={instdetail} className="asiainp5" />
-
-      <label htmlFor="person" className="asialab6">Enter Person's</label>
-      <input type="number" name="person" placeholder="Number Of Person's" onChange={instdetail} className="asiainp6" />
-    </div>
-
-    <div>
-      <label htmlFor="price" className="asialab7">Your Price</label>
-      <input type="number" name="price" value={9000} readOnly onChange={instdetail} className="asiainp7" />
-
-      <label htmlFor="mode" className="asialab8">Mode Of Travel</label>
-      <select name="mode" onChange={instdetail} className="asiainp8">
-        <option value="Select Vehicle">Select Vehicle</option>
-        <option value="Train">Train</option>
-        <option value="Car">Car</option>
-        <option value="Bus">Bus</option>
-      </select>
-    </div>
-
-    <div>
-      <label htmlFor="country" className="asialist">Choose Country</label>
-      <select name="country" id="asiaoption" onChange={instdetail}>
-        <option value="Book Destination">Book Destination</option>
-        <option value="Asia - India">Asia - India</option>
-        <option value="Asia - China">Asia - China</option>
-        <option value="Asia - Iraq">Asia - Iraq</option>
-        <option value="Asia - Sri Lanka">Asia - Sri Lanka</option>
-        <option value="Asia - Georgia">Asia - Georgia</option>
-        <option value="Asia - Cyprus">Asia - Cyprus</option>
-        <option value="Asia - Thailand">Asia - Thailand</option>
-        <option value="Asia - Brunie">Asia - Brunie</option>
-        <option value="Asia - Turkey">Asia - Turkey</option>
-        <option value="Asia - Nepal">Asia - Nepal</option>
-      </select>
-    </div>
-
-    <div>
-      <input type="submit" className="asiasub" />
-    </div>
-  </form>
-</section>
-
-        </>
+    
     )
 }
 
 
 export default Asiaform
+
