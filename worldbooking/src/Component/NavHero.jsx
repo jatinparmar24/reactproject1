@@ -38,25 +38,25 @@ const sumb=()=>{
                     <div className="hob"> <div className="firstimg">USA</div><img src="cont1.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
-                    <div> <div className="firstimg">Dubai</div><img src="cont2.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
+                    <div className="hob"> <div className="firstimg">Dubai</div><img src="cont2.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
-                    <div><div className="firstimg">Ukraine</div><img src="cont3.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
+                    <div className="hob"><div className="firstimg">Ukraine</div><img src="cont3.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
-                    <div><div className="firstimg">Bali</div><img src="cont4.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
+                    <div className="hob"><div className="firstimg">Bali</div><img src="cont4.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
-                    <div><div className="firstimg">Sweden</div><img src="cont5.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
+                    <div className="hob"><div className="firstimg">Sweden</div><img src="cont5.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
-                    <div><div className="firstimg">Panama</div><img src="cont6.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
+                    <div className="hob"><div className="firstimg">Panama</div><img src="cont6.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
-                    <div><div className="firstimg">France</div><img src="cont7.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
+                    <div className="hob"><div className="firstimg">France</div><img src="cont7.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
-                    <div><div className="firstimg">India</div><img src="cont8.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
+                    <div className="hob"><div className="firstimg">India</div><img src="cont8.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 
 
                 </div>
@@ -183,8 +183,7 @@ const sumb=()=>{
        <h2> World's Biggest Continent Welcome's You </h2>
        <h2>A Place Filled With Many Different Culture and Tradition</h2>
        <h2>Places Never Explore Before Pack Your Bag And Start your Journey</h2>
-       {/* <button id="bookbotton"><Link to='/Asiaform' style={{textDecoration:"none",color:"Black"}}>Click To Visit Asia </Link></button> */}
-       <button id="bookbotton" onClick={sumb}>Click To Visit</button>
+       <button id="bookbotton" onClick={sumb}>Click To Visit Asia</button>
 
 </div>
 
