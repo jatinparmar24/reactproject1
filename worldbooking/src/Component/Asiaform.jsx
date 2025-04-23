@@ -1,33 +1,63 @@
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Asiaform() {
-  let todata = useNavigate();
-  let [insertfrom, setinsertform] = useState({ price: 9000 });
 
-  function instdetail(e) {
+  const today = new Date().toISOString().split("T")[0];
+
+  const navigate = useNavigate();
+  const [insertform, setInsertform] = useState({
+    name: "",
+    contact: "",
+    age: "",
+    day: "",
+    date: "",
+    person: "",
+    mode: "",
+    country: "",
+    price: 9000,
+  });
+
+  // Load user data from localStorage on component mount
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("userdata"));
+    if (user) {
+      setInsertform((prev) => ({
+        ...prev,
+        name: user.name || "",
+        contact: user.contact || "", // optional, if stored
+      }));
+    }
+  }, []);
+
+  function handleInputChange(e) {
     const { name, value } = e.target;
-    setinsertform({ ...insertfrom, [name]: value });
+    setInsertform({ ...insertform, [name]: value });
   }
 
-  function detailsubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    // Basic form validation
-    if (!insertfrom.name || !insertfrom.contact || !insertfrom.age || !insertfrom.day || !insertfrom.date || !insertfrom.person || !insertfrom.mode || !insertfrom.country) {
+
+    const requiredFields = ["name", "contact", "age", "day", "date", "person", "mode", "country"];
+    const isEmpty = requiredFields.some(field => !insertform[field]);
+
+    if (isEmpty) {
       alert("Please fill in all fields.");
       return;
     }
 
-    const formData = { ...insertfrom, price: 9000 };
-    axios.post('http://localhost:3000/tourism', formData)
-      .then(res => {
+    const formData = { ...insertform, price: 9000 };
+    console.log("Submitting form:", formData);
+
+    axios.post("http://localhost:3000/tourism", formData)
+      .then(() => {
         alert("Data Inserted");
-        todata('/Singledetail');
+        navigate("/Singledetail");
       })
-      .catch(err => {
+      .catch((err) => {
         alert("Error inserting data. Please try again.");
-        console.error(err);
+        console.error("Submission error:", err);
       });
   }
 
@@ -36,45 +66,100 @@ function Asiaform() {
       <section id="asiaSec">
         <h1 className="asiaFormHead">Book Your Asia Tour</h1>
 
-        <form className="asiaForm" onSubmit={detailsubmit}>
+        <form className="asiaForm" onSubmit={handleSubmit}>
           <div className="inputGroup">
             <label htmlFor="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your Full Name" onChange={instdetail} autoFocus />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Full Name"
+              onChange={handleInputChange}
+              value={insertform.name}
+              autoFocus
+            />
           </div>
 
           <div className="inputGroup">
             <label htmlFor="contact">Contact</label>
-            <input type="number" id="contact" name="contact" placeholder="Enter Number" onChange={instdetail} />
+            <input
+              type="number"
+              id="contact"
+              name="contact"
+              placeholder="Enter Number"
+              onChange={handleInputChange}
+              value={insertform.contact}
+            />
           </div>
 
           <div className="inputGroup">
             <label htmlFor="age">Age</label>
-            <input type="number" id="age" name="age" placeholder="Your Age" onChange={instdetail} />
+            <input
+              type="number"
+              id="age"
+              name="age"
+              placeholder="Your Age"
+              onChange={handleInputChange}
+              value={insertform.age}
+            />
           </div>
 
           <div className="inputGroup">
             <label htmlFor="day">Number of Days</label>
-            <input type="number" id="day" name="day" placeholder="Trip Duration" onChange={instdetail} />
+            <input
+              type="number"
+              id="day"
+              name="day"
+              placeholder="Trip Duration"
+              onChange={handleInputChange}
+              value={insertform.day}
+            />
           </div>
 
           <div className="inputGroup">
             <label htmlFor="date">Start Date</label>
-            <input type="date" id="date" name="date" onChange={instdetail} />
+            <input
+              type="date"
+              id="date"
+              name="date"
+              onChange={handleInputChange}
+              value={insertform.date}
+              min={today}
+
+            />
           </div>
 
           <div className="inputGroup">
             <label htmlFor="person">Number of Persons</label>
-            <input type="number" id="person" name="person" placeholder="Travelers Count" onChange={instdetail} />
+            <input
+              type="number"
+              id="person"
+              name="person"
+              placeholder="Travelers Count"
+              onChange={handleInputChange}
+              value={insertform.person}
+            />
           </div>
 
           <div className="inputGroup">
             <label htmlFor="price">Estimated Price</label>
-            <input type="number" id="price" name="price" value={insertfrom.price} readOnly />
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value={insertform.price}
+              readOnly
+            />
           </div>
 
           <div className="inputGroup">
             <label htmlFor="mode">Mode of Travel</label>
-            <select name="mode" id="mode" onChange={instdetail}>
+            <select
+              name="mode"
+              id="mode"
+              onChange={handleInputChange}
+              value={insertform.mode}
+            >
               <option value="">Select Vehicle</option>
               <option value="Train">Train</option>
               <option value="Car">Car</option>
@@ -84,7 +169,12 @@ function Asiaform() {
 
           <div className="inputGroup">
             <label htmlFor="country">Destination Country</label>
-            <select name="country" id="country" onChange={instdetail}>
+            <select
+              name="country"
+              id="country"
+              onChange={handleInputChange}
+              value={insertform.country}
+            >
               <option value="">Select Destination</option>
               <option value="Asia - India">Asia - India</option>
               <option value="Asia - China">Asia - China</option>

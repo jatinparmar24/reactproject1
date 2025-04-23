@@ -352,7 +352,8 @@ section{
 
 /* section 1 starts from here */
 #sec1 {
-  height: 130vh;
+  height: auto;
+  min-height: 100vh;
   background: linear-gradient(to right, #2ecc71, #f39c12);
   padding: 20px;
   font-family: 'Poppins', sans-serif;
@@ -370,6 +371,7 @@ section{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .sec1child2 {
@@ -377,6 +379,8 @@ section{
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   padding: 0 10px;
+  width: 100%;
+  max-width: 1200px;
 }
 
 .hob {
@@ -429,6 +433,7 @@ section{
     transform: translateX(-100%);
   }
 }
+
 
 
 /* section 1 ends here */
@@ -1721,19 +1726,16 @@ h4 {
 
 /* navbar start here */
 
-.navbar {
-  flex-wrap: wrap;
-}
-
 .navbar-links {
-  flex-direction: column;
-  background-color: rgba(255, 255, 255, 0.95);
   position: absolute;
-  top: 80px;
+  top: 70px;
   right: 0;
-  width: 100%;
-  padding: 20px 0;
+  flex-direction: column;
+  background-color: #27ae60;
+  width: 200px;
+  padding: 20px;
   display: none;
+  border-radius: 10px;
 }
 
 .navbar-links.active {
@@ -1744,38 +1746,20 @@ h4 {
   display: block;
 }
 
+
  
 /* navbar ends here */
+.sec1child2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 #sec1head {
   font-size: 2rem;
-  margin-bottom: 20px;
 }
 
-#sec1maindiv {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  padding: 0 10px;
+.marquee{
+  display: none;
 }
-
-.hob {
-  width: 180px;
-}
-
-.sec1img {
-  height: 200px;
-}
-
-#marqdiv {
-  gap: 10px;
-}
-
-.marqimg {
-  width: 120px;
-  height: 120px;
-}
-
-
 
 
 

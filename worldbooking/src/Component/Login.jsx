@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
-  let tohome = useNavigate();
+  const tohome = useNavigate();
 
   const [logindata, setlogindata] = useState({
     name: "",
@@ -32,7 +31,7 @@ function Login() {
     // Admin login check
     if (logindata.name === "admin" && logindata.password === "admin123") {
       alert("Admin login successful");
-      let admindata = { name: "admin", role: "admin" };
+      const admindata = { name: "admin", role: "admin" };
       localStorage.setItem("userdata", JSON.stringify(admindata));
       localStorage.setItem("isLoggedIn", "true");
       tohome("/Admin");
@@ -51,10 +50,18 @@ function Login() {
       return;
     }
 
-    // If login is successful, save login state and user data
-    localStorage.setItem("isLoggedIn", "true");
-    localStorage.setItem("userdata", JSON.stringify({ name: logindata.name, role: "user" }));
-    tohome("/"); // Navigate to home after successful login
+    // If login is successful, save login state and full user data
+    const userData = {
+      name: signupdata.name,
+      contact: signupdata.contact || "", // Save contact if it exists
+      email: signupdata.email || "",     // Optional: if you also save email
+      role: "user"
+    };
+
+    localStorage.setItem("isLoggedIn", 'true');
+    localStorage.setItem("userdata", JSON.stringify(userData));
+
+    tohome("/");
   }
 
   return (
@@ -86,7 +93,7 @@ function Login() {
             <input type="submit" value="Login" className="loginsub" />
             <br /> <br />
 
-            <h2 style={{ color: "darkblue", fontWeight: "600" }}>Don't have An Account?</h2>
+            <h2 style={{ color: "darkblue", fontWeight: "600" }}>Don't have an account?</h2>
 
             <Link to="/SignUp" className="loginsub" style={{ textDecoration: "none", color: "black" }}>
               Sign Up

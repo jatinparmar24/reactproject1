@@ -6,15 +6,15 @@ function Asiadetail() {
 
     
     const handleClick = () => {
-      const isLoggedIn = localStorage.getItem('isLoggedIn');
-      console.log('isLoggedIn:', isLoggedIn);  // Check if it's being fetched correctly
+      const isLoggedIn = localStorage.getItem('isLoggedIn')
       
-      // Ensure we compare the value correctly (check for string 'true')
-      if (isLoggedIn === 'true') {
-          tonavigate('/Asiaform');
-      } else {
-          tonavigate('/Login');
-      }
+           if (isLoggedIn=='true') {
+            console.log(isLoggedIn)
+             tonavigate('/Asiaform');
+           } else {
+             tonavigate('/Login');
+           }
+
   };
   
 

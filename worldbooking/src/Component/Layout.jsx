@@ -15,6 +15,8 @@ const Layout = () => {
 
   const logout = () => {
     localStorage.removeItem('userdetails');
+    localStorage.setItem("isLoggedIn", "false");
+
     setUser(null);
   };
 
@@ -34,6 +36,7 @@ const Layout = () => {
           <li>
             {user ? (
               <Link onClick={logout} className="nav-link">Logout</Link>
+              
             ) : (
               <Link to="/Login" className="nav-link">Login</Link>
             )}

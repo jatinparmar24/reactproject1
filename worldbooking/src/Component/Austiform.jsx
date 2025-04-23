@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Australiaform() {
+
+  const today = new Date().toISOString().split("T")[0];
+
   let todata = useNavigate();
   let [insertfrom, setinsertform] = useState({ price: 18000 });
 
@@ -57,7 +60,7 @@ function Australiaform() {
 
             <div className="inputGroup">
               <label htmlFor="date">Start Date</label>
-              <input type="date" id="date" name="date" onChange={instdetail} />
+              <input type="date" id="date" name="date" onChange={instdetail}  min={today} />
             </div>
 
             <div className="inputGroup">

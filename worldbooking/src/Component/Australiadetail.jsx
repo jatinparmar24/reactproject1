@@ -14,7 +14,7 @@ function Australiadetail(){
     const handleClick = () => {
       const isLoggedIn = localStorage.getItem('isLoggedIn');
   
-      if (isLoggedIn === 'true') {
+      if (isLoggedIn == 'true') {
         tonavigate('/Australiaform');
       } else {
         tonavigate('/Login');

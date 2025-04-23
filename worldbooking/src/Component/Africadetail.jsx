@@ -14,8 +14,8 @@ function Africadetail(){
     const handleClick = () => {
       const isLoggedIn = localStorage.getItem('isLoggedIn');
   
-      if (isLoggedIn === 'true') {
-        tonavigate('/africaform');
+      if (isLoggedIn == 'true') {
+        tonavigate('/Africaform');
       } else {
         tonavigate('/Login');
       }
