@@ -15,7 +15,7 @@ function Northdetail(){
       const isLoggedIn = localStorage.getItem('isLoggedIn');
   
       if (isLoggedIn === 'true') {
-        tonavigate('/northform');
+        tonavigate('/Northform');
       } else {
         tonavigate('/Login');
       }
@@ -55,7 +55,7 @@ function Northdetail(){
                      <h4>Explore With Family</h4>
                      <h5>5 star Rating</h5>
                      <h3>Price : 20000</h3>
-                    <button>Book Now</button>
+                     <button onClick={handleClick}>Book Now</button>
 
                 </div>
 
@@ -91,7 +91,7 @@ function Northdetail(){
                      <h4>Explore With Family</h4>
                      <h5>5 star Rating</h5>
                      <h3>Price : 20000</h3>
-                    <button>Book Now</button>
+                     <button onClick={handleClick}>Book Now</button>
 
                 </div>
 
@@ -127,7 +127,7 @@ function Northdetail(){
                      <h4>Explore With Family</h4>
                      <h5>5 star Rating</h5>
                      <h3>Price : 20000</h3>
-                    <button>Book Now</button>
+                     <button onClick={handleClick}>Book Now</button>
 
                 </div>
 
@@ -163,7 +163,7 @@ function Northdetail(){
                      <h4>Explore With Family</h4>
                      <h5>5 star Rating</h5>
                      <h3>Price : 20000</h3>
-                    <button>Book Now</button>
+                     <button onClick={handleClick}>Book Now</button>
 
                 </div>
 

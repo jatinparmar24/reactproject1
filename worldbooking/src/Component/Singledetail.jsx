@@ -1,68 +1,88 @@
-import axios from "axios"
-import { useEffect, useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
+function Singledetail() {
+  let tohome = useNavigate();
 
+  const [formdetail, setformdetail] = useState([]);
+  const [alertShown, setAlertShown] = useState(false);
+  const [alertRefundShown, setAlertRefundShown] = useState(false);
+  const [showform, setshowform] = useState(false);
+  const [editdetail, seteditdetail] = useState({});
 
-function Singledetail(){
-
-   let tohome=useNavigate()
-
-    let[formdetail,setformdetail]=useState([])
-
-   function delet(id){
-    
-    axios.delete(`http://localhost:3000/tourism/${id}`)
-    .then(res=>alert("Tour Cancelled"))
-    tohome('/')
+  // Fetch booking details on component mount
+  useEffect(() => {
     axios.get('http://localhost:3000/tourism')
-    .then(res => setformdetail(res.data));
+      .then(res => setformdetail(res.data));
+  }, []);
 
-   }
+  // Handle editing form data
+  function editdata(e) {
+    const { name, value } = e.target;
+    seteditdetail({ ...editdetail, [name]: value });
+  }
 
-    useEffect(()=>{
-        axios.get('http://localhost:3000/tourism')
-        .then(res=>{
-            setformdetail(res.data)
+  // Submit the edited data
+  function editfinaldata(e) {
+    e.preventDefault();
+    axios.put(`http://localhost:3000/tourism/${editdetail.id}`, editdetail)
+      .then(() => {
+        alert("Data Updated");
+        setshowform(false); // Hide the form after update
+      });
+  }
+
+  // Handle booking confirmation
+  function confirmBooking() {
+    const lastBooking = formdetail[formdetail.length - 1];
+    const total = lastBooking ? lastBooking.price * lastBooking.day * lastBooking.person : 0;
+
+    const confirmed = window.confirm("Do you want to confirm your booking?");
+
+    if (confirmed) {
+      if (!alertShown) {
+        alert(`✅ Booking Confirmed\n💸 Amount Paid: $${total}`);
+        setAlertShown(true);
+      }
+    }
+  }
+
+  // Handle cancellation (refund)
+  function delet(id) {
+    const lastBooking = formdetail[formdetail.length - 1];
+    const total = lastBooking ? lastBooking.price * lastBooking.day * lastBooking.person : 0;
+
+    const confirmed = window.confirm("Are you sure you want to cancel the booking?");
+
+    if (confirmed) {
+      axios.delete(`http://localhost:3000/tourism/${id}`)
+        .then(() => {
+          if (!alertRefundShown) {
+            alert(`❌ Booking Cancelled\n💸 Money Refunded: $${total}`);
+            setAlertRefundShown(true);
+          }
+          tohome("/"); // Navigate to home after deletion
+          // Optionally, refetch the data after cancellation
+          axios.get('http://localhost:3000/tourism')
+            .then(res => setformdetail(res.data));
         })
-    },[])
+        .catch(error => alert("Error canceling the booking: " + error));
+    }
+  }
 
-   
-    // for edit form
+  return (
+    <section id="singledata">
+      <h1 className="singlehead">Your Booking Details</h1>
 
-    let[showform,setshowform]=useState(false)
+      <button className="singletohome">
+        <Link to="/" style={{ textDecoration: "none", color: "darkblue", fontWeight: "600" }}>To Home Section</Link>
+      </button>
 
-    // for edit paricular data
-       let[editdetail,seteditdetail]=useState({})
-
-       function editdata(e){
-        const{name,value}=e.target
-        seteditdetail({...editdetail,[name]:value})
-       }
-
-
-       function editfinaldata(e){
-        e.preventDefault()
-        axios.put(`http://localhost:3000/tourism/${editdetail.id}`,editdetail)
-        .then(res=>alert("Data Updated"))
-       }
-
-       const lastBooking = formdetail[formdetail.length - 1];
-       const total = lastBooking ? lastBooking.price * lastBooking.day * lastBooking.person : 0;
-   
-
-
-    return(
-        <>
-            <section id="singledata">
-
-            <h1 className="singlehead">Your Booking Details</h1>
-
-<button className="singletohome"><Link to="/" style={{textDecoration:"none",color:"darkblue",fontWeight:"600"}}>To Home Section</Link></button>
-<table border="1" className="singledetailtable">
-    <thead>
-        <tr>
-
+      <table border="1" className="singledetailtable">
+        <thead>
+          <tr>
             <th>Name</th>
             <th>Contact</th>
             <th>Age</th>
@@ -72,100 +92,86 @@ function Singledetail(){
             <th>Vehicle</th>
             <th>Total</th>
             <th>Destination</th>
-            <th style={{backgroundColor:"orangered"}}>Edit</th>
-            <th style={{backgroundColor:"orangered"}}>Delete</th>
+            <th>Confirm</th>
+            <th>Edit</th>
+            <th>Cancel</th>
+          </tr>
+        </thead>
 
-        </tr>
+        <tbody>
+          {formdetail.length > 0 && (
+            <tr key={formdetail[formdetail.length - 1].id}>
+              <td>{formdetail[formdetail.length - 1].name}</td>
+              <td>{formdetail[formdetail.length - 1].contact}</td>
+              <td>{formdetail[formdetail.length - 1].age}</td>
+              <td>{formdetail[formdetail.length - 1].day}</td>
+              <td>{formdetail[formdetail.length - 1].date}</td>
+              <td>{formdetail[formdetail.length - 1].person}</td>
+              <td>{formdetail[formdetail.length - 1].mode}</td>
+              <td>{formdetail[formdetail.length - 1].price * formdetail[formdetail.length - 1].day * formdetail[formdetail.length - 1].person}</td>
+              <td>{formdetail[formdetail.length - 1].country}</td>
+              <td>
+                <button onClick={confirmBooking} >Confirm Booking</button>
+              </td>
+              <td>
+                <button onClick={() => {
+                  seteditdetail(formdetail[formdetail.length - 1]);
+                  setshowform(true); // Make sure form becomes visible after setting data
+                }}>Edit</button>
+              </td>
+              <td>
+                <button onClick={() => delet(formdetail[formdetail.length - 1].id)} className="delbutton">Cancel</button>
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
 
-    </thead>
-
-    <tbody>
-    {formdetail.length > 0 && (
-                            <tr key={lastBooking.id}>
-                                <td>{lastBooking.name}</td>
-                                <td>{lastBooking.contact}</td>
-                                <td>{lastBooking.age}</td>
-                                <td>{lastBooking.day}</td>
-                                <td>{lastBooking.date}</td>
-                                <td>{lastBooking.person}</td>
-                                <td>{lastBooking.mode}</td>
-                                <td>{total}</td> {/* Display the calculated total */}
-                                <td>{lastBooking.country}</td>
-                                <td style={{ backgroundColor: "orangered" }}>
-                                    <button onClick={() => (setshowform(true), seteditdetail(lastBooking))} style={{ border: "none", backgroundColor: "orangered" }}>Edit</button>
-                                </td>
-                                <td style={{ backgroundColor: "orangered" }}>
-                                    <button onClick={() => delet(lastBooking.id)} className="delbutton" style={{ border: "none", backgroundColor: "orangered" }}>Delete</button>
-                                </td>
-                            </tr>
-                        )}
-
-    </tbody>
-
-</table>
-
+      {showform && (
       
-{showform && (
- 
-<form action="" onSubmit={editfinaldata}>
+          <form onSubmit={editfinaldata}>
+            <div className="formcontainer">
+              <label htmlFor="" className="formcontlab"> Enter Name</label>
+              <input type="text" name="name" value={editdetail.name} onChange={editdata} placeholder="Enter Your Name" className="formcontinp"/>
 
-<div>
-      <label htmlFor=""> Enter Name</label>
-      <input type="text" name="name" placeholder="Enter Your Name" value={editdetail.name} onChange={editdata} />
+              <label htmlFor="" className="formcontlab"> Enter Contact </label>
+              <input type="text" name="contact" value={editdetail.contact} onChange={editdata} placeholder="Enter Contact Number"  className="formcontinp"/>
+            </div> <br />
 
-      <label htmlFor=""> Enter Contact </label>
-      <input type="text" name="contact" placeholder="Enter Contact Number" value={editdetail.contact} onChange={editdata} />
-    </div> <br />
+            <div>
+              <label htmlFor="" className="formcontlab"> Enter Age</label>
+              <input type="number" name="age" value={editdetail.age} onChange={editdata} placeholder="Enter Your Age" className="formcontinp"/>
 
-    <div>
-      <label htmlFor=""> Enter Age</label>
-      <input type="number" name="age" placeholder="Enter Your Age" value={editdetail.age} onChange={editdata} style={{marginLeft:"24px"}}/>
+              <label htmlFor="" className="formcontlab"> Enter Day</label>
+              <input type="number" name="day" value={editdetail.day} onChange={editdata} placeholder="Number Of Day's" className="formcontinp"/>
+            </div> <br />
 
-      
-      <label htmlFor=""> Enter Day</label>
-      <input type="number" name="day" placeholder="Number Of Day's" value={editdetail.day} onChange={editdata} style={{marginLeft:"52px"}}/>
+            <div>
+              <label htmlFor="" className="formcontlab"> Enter Date</label>
+              <input type="date" name="date" value={editdetail.date} onChange={editdata} placeholder="Enter Date" className="formcontinp"/>
 
-    </div> <br /> 
+              <label htmlFor="" className="formcontlab"> Enter Person's</label>
+              <input type="number" name="person" value={editdetail.person} onChange={editdata} placeholder="Number Of Person's" className="formcontinp" />
+            </div> <br />
 
-    <div>
-      <label htmlFor=""> Enter Date</label>
-      <input type="date" name="date" placeholder="Enter Date" value={editdetail.date} onChange={editdata} style={{marginLeft:"10px"}}/>
+            <div>
+              <label htmlFor="" className="formcontlab"> Mode Of Travel</label>
+              <select name="mode" value={editdetail.mode} onChange={editdata} className="formcontinp">
+                <option value="Select Vehicle">Select Vehicle</option>
+                <option value="Train">Train</option>
+                <option value="Car">Car</option>
+                <option value="Bus">Bus</option>
+              </select>
+            </div> <br />
 
-      <label htmlFor="">Enter Person's</label>
-      <input type="number" name="person" placeholder="Number Of Person's" value={editdetail.person} onChange={editdata}/>
-
-    </div> <br /> 
-
-
-    <div>
-     
-
-      <label htmlFor="">Mode Of Travel</label>
-      <select name="mode" id="" value={editdetail.mode} onChange={editdata} style={{marginLeft:"-15px",width:"250px",borderRadius:"30px",height:"40px",  boxShadow: "inset 2px 2px 2px grey , 2px 2px 2px grey" ,paddingLeft:"20px"}} >
-        <option value="Select Vehicle" >Select Vehicle</option>
-        <option value="Train">Train</option>
-        <option value="Car">Car</option>
-        <option value="Bus">Bus</option>
-      </select>
-
-    </div> <br /> 
-
-
-   <div> <input type="submit" className="singlesubmit" /></div>
-
-
-
-
-
-</form>
-    
-)}
-
-            </section>
-
-        </>
-    )
+            <div>
+              <input type="submit" className="singlesubmit" />
+            </div>
+          </form>
+        
+      )}
+    </section>
+  );
 }
-export default Singledetail
 
-
+export default Singledetail;

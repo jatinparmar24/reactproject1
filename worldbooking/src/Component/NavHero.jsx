@@ -1,7 +1,7 @@
 
 
 
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 import {FcAbout, FcAddImage, FcAddRow, FcAdvance, FcAnswers, FcAreaChart, FcBadDecision,  FcBookmark, FcCalendar, FcCallback, FcCamera, FcComboChart, FcDataRecovery, FcLibrary, FcPackage, FcPhotoReel, FcPlanner, FcPodiumWithoutSpeaker, FcProcess, FcSelfie, FcSettings, FcShop, FcTodoList, FcTrademark, FcTwoSmartphones, FcVideoCall, FcVideoProjector, FcViewDetails} from 'react-icons/fc'
@@ -10,17 +10,8 @@ import {FcAbout, FcAddImage, FcAddRow, FcAdvance, FcAnswers, FcAreaChart, FcBadD
 function NavHero(){
 
   
-let tomove=useNavigate()
-const sumb=()=>{
-  let islogin=localStorage.getItem('find')
-  if(islogin){
-    tomove('/Asiaform')
-  }
-  else{
-    alert('Please Login First')
-    tomove('/Login')
-  }
-}
+
+
 
 
     return(
@@ -68,19 +59,13 @@ const sumb=()=>{
              <div id="borderdiv">
 
 
-                
-          <marquee behavior="alternate" direction="right">
 
-                  <div id="marqdiv">
-                  
-                   <img src="cont9.jpeg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/><img src="cont10.jpeg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/><img src="nature2.jpg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/>
-                   <img src="cont11.jpeg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/><img src="cont12.jpeg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/><img src="nature1.jpg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/>
-                   
-                  
-                  
-                  
+                  <div className="marquee">
+                  <img src="cont9.jpeg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/><img src="cont10.jpeg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/><img src="nature2.jpg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/>
+                  <img src="cont11.jpeg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/><img src="cont12.jpeg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/><img src="nature1.jpg" alt=""  style={{width:"150px",height:"150px",borderRadius:"30px"}}/>
                   </div>
-          </marquee>
+
+
              </div>
 
 
@@ -183,7 +168,7 @@ const sumb=()=>{
        <h2> World's Biggest Continent Welcome's You </h2>
        <h2>A Place Filled With Many Different Culture and Tradition</h2>
        <h2>Places Never Explore Before Pack Your Bag And Start your Journey</h2>
-       <button id="bookbotton" onClick={sumb}>Click To Visit Asia</button>
+       <button id="bookbotton"><Link to='/Asiadetail' style={{textDecoration:"none",color:"Black"}}>Click To Visit Asia</Link></button>
 
 </div>
 
@@ -194,7 +179,7 @@ const sumb=()=>{
         <h2>Welcome To Europe</h2>
         <h2>The Place Filled With Happiness Awaits For You</h2>
         <h2>The Continent With Full Of Light And Joy Is Wiating For You </h2>
-        <button id="bookbotton"><Link to='/Europeform' style={{textDecoration:"none",color:"Black"}}>Click To Visit Europe</Link></button>
+        <button id="bookbotton"><Link to='/EUropedetail' style={{textDecoration:"none",color:"Black"}}>Click To Visit Europe</Link></button>
 </div>
 
 <div id="sec4div3"></div>
@@ -204,7 +189,7 @@ const sumb=()=>{
        <h2>Continent Of Tribes</h2>
        <h2>Africa The Continent Of Adventure </h2>
        <h2>Places That Amazes AT Single Time You see</h2>
-       <button id="bookbotton"><Link to='/Africaform' style={{textDecoration:"none",color:"Black"}}>Click To Visit Africa</Link></button>
+       <button id="bookbotton"><Link to='/Africadetail' style={{textDecoration:"none",color:"Black"}}>Click To Visit Africa</Link></button>
 </div>
 
 <div id="sec4div4"></div>
@@ -214,7 +199,7 @@ const sumb=()=>{
        <h2>The Place Of Growth</h2>
        <h2>The Place of Innovation </h2>
        <h2>Continent Of Development And Adventure</h2>
-       <button id="bookbotton"><Link to='/Northform' style={{textDecoration:"none",color:"Black"}}>Click To Visit North America</Link></button>
+       <button id="bookbotton"><Link to='/Northdetail' style={{textDecoration:"none",color:"Black"}}>Click To Visit North America</Link></button>
 </div>
 
 <div id="sec4div5"></div>
@@ -224,7 +209,7 @@ const sumb=()=>{
     <h2>Place Of Height And Distance</h2>
     <h2>Mountains and Forest Are Just Amazing</h2>
     <h2>Amazon Rainforest Awiats For you To Visit At Once</h2>
-    <button id="bookbotton"><Link to='/Southform' style={{textDecoration:"none",color:"Black"}}>Click To Visit South America</Link></button>
+    <button id="bookbotton"><Link to='/Southdetail' style={{textDecoration:"none",color:"Black"}}>Click To Visit South America</Link></button>
 </div>
 
 <div id="sec4div6"></div>
@@ -234,7 +219,7 @@ const sumb=()=>{
     <h2> World's Biggest Island</h2>
     <h2>Places Of Endangerd Species</h2>
     <h2>Sorrounded By Oceans Filled With Sea-shore</h2>
-    <button id="bookbotton"><Link to='/Australiaform' style={{textDecoration:"none",color:"Black"}}>Click To Visit Australia</Link></button>
+    <button id="bookbotton"><Link to='/Australiadetail' style={{textDecoration:"none",color:"Black"}}>Click To Visit Australia</Link></button>
 </div>
 
 

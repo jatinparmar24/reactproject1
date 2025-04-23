@@ -15,7 +15,7 @@ function Southdetail(){
       const isLoggedIn = localStorage.getItem('isLoggedIn');
   
       if (isLoggedIn === 'true') {
-        tonavigate('/southform');
+        tonavigate('/Southform');
       } else {
         tonavigate('/Login');
       }
@@ -55,7 +55,7 @@ function Southdetail(){
                      <h4>Explore With Family</h4>
                      <h5>5 star Rating</h5>
                      <h3>Price : 19000</h3>
-                    <button>Book Now</button>
+                     <button onClick={handleClick}>Book Now</button>
 
                 </div>
 
@@ -89,7 +89,7 @@ function Southdetail(){
      <h4>Explore With Family</h4>
      <h5>5 star Rating</h5>
      <h3>Price : 19000</h3>
-    <button>Book Now</button>
+     <button onClick={handleClick}>Book Now</button>
 
 </div>
 
@@ -124,7 +124,7 @@ function Southdetail(){
      <h4>Explore With Family</h4>
      <h5>5 star Rating</h5>
      <h3>Price : 19000</h3>
-    <button>Book Now</button>
+     <button onClick={handleClick}>Book Now</button>
 
 </div>
 
@@ -159,7 +159,7 @@ function Southdetail(){
      <h4>Explore With Family</h4>
      <h5>5 star Rating</h5>
      <h3>Price : 19000</h3>
-    <button>Book Now</button>
+     <button onClick={handleClick}>Book Now</button>
 
 </div>
 

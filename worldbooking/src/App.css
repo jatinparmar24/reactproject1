@@ -410,22 +410,26 @@ section{
   margin-top: 30px;
 }
 
-#marqdiv {
+.marquee {
   display: flex;
-  gap: 15px;
-  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: scroll-left 10s linear infinite;
 }
 
-.marqimg {
-  width: 150px;
-  height: 150px;
-  border-radius: 30px;
-  transition: transform 0.3s;
+.marquee img {
+  margin-right: 10px;
 }
 
-.marqimg:hover {
-  transform: scale(1.1);
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
+
 
 /* section 1 ends here */
 
@@ -570,6 +574,42 @@ section{
 #bookbotton:hover {
   background-color: #d35400;
 }
+
+
+.submitBtn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.submitBtn button {
+  padding: 12px 30px;
+  background-color: #4CAF50; /* Green background */
+  color: white; /* White text */
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto;
+  min-width: 200px;
+}
+
+.submitBtn button:hover {
+  background-color: #45a049; /* Darker green when hovered */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+.submitBtn button:active {
+  background-color: #3e8e41; /* Even darker green when clicked */
+  transform: translateY(0); /* Reset the lift effect */
+}
+
+.submitBtn button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.5); /* Green outline on focus */
+}
+
+
 
 
 
@@ -1313,219 +1353,316 @@ h4 {
 
 
 /* admin dash board */
+/* Dashboard Section */
+#dashboard {
+  padding: 20px;
+  background-color: #f4f4f9;
+  font-family: 'Arial', sans-serif;
+}
 
-#dashboard{
+.adminhead {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Button Styling */
+.adminbtu {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.adminbtu:hover {
+  background-color: #45a049;
+}
+
+/* Admin Dashboard Table */
+#admindash {
   width: 100%;
-  height: 100vh;
-  position: relative;
-  background: linear-gradient(to bottom left,rgba(153, 246, 250, 0.529),rgba(34, 146, 150, 0.951));
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#dashboard .adminbtu{
-  width: 250px;
-  margin-top: 4.8%;
-  font-size: 25px;
-  margin-left: 8%;
- border-radius: 30px;
- background-color: orange;
+#admindash thead {
+  background-color: #333;
+  color: white;
 }
 
-.adminhead{
-  position: absolute;
-  margin-top: 3%;
-  margin-left: 30%;
-  font-size: 70px;
+#admindash th, #admindash td {
+  padding: 12px;
+  text-align: center;
+  font-size: 1rem;
+  border: 1px solid #ddd;
 }
 
-#admindash{
-  position: absolute;
-  width: 1200px;
-  height: 80px;
-  border: 3px solid;
-  margin-left: 5%;
-  margin-top: 10%;
-  font-size: 25px;
- 
+#admindash th {
+  font-weight: bold;
 }
 
-#admindash th{
-  border: 1px solid black;
-  padding-left: 10px;
-  color: darkblue;
+#admindash tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-#admindash td{
-  border: 1px solid black;
-  padding-left: 10px;
+#admindash tbody tr:hover {
+  background-color: #f1f1f1;
 }
+
+/* Delete Button Styling */
+#admindash td button {
+  background-color: orangered;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#admindash td button:hover {
+  background-color: #e63946;
+}
+
+#admindash td button:active {
+  transform: scale(0.98);
+  background-color: #d62c1a;
+}
+
+
+/* admin dashboard ends here */
 
 /* singledata */
 
-#singledata{
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to bottom right,rgba(153, 246, 250, 0.529),rgba(34, 146, 150, 0.951));
-  position: relative;
+
+#singledata {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 1200px;
 }
 
-.singlehead{
-  position: absolute;
-  margin-left: 30%;
-  margin-top: 2%;
-  font-size: 50px;
+.singlehead {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-.singletohome{
-  margin-top: 3%;
-  margin-left: 5%;
-  width: 200px;
-  height: 40px;
-  font-size: 25px;
-  background-color: orangered;
-  border-radius: 30px;
-}
-
-.singledetailtable{
-  width: 1200px;
-  height: 80px;
-  margin-left: 5%;
-  margin-top: 5%;
-  font-size: 25px;
-}
-
-.singledetailtable th{
-  border: 1px solid black;
-  padding-left: 10px;
-  color: darkblue;
-}
-
- .singledetailtable td{
-  border: 1px solid black;
-  padding-left: 10px;
-}
-
-#singledata form div{
-  margin-top: 2.8%;
-  margin-left: 5%;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 70px;
-  font-size: 24px;
-}
-
-#singledata form input{
-  width: 250px;
-  height: 45px;
-  padding-left: 20px;
-  font-size: 22px;
-  border-radius: 25px;
-  box-shadow: inset 2px 2px 2px grey , 2px 2px 2px grey;
-}
-
-#singledata form label{
-  color: darkblue;
-  font-size: 30px;
-  font-weight: 600;
-}
-
-.singlesubmit{
-  position: absolute;
-  top: 620px;
-  left: 50%;
-  background-color: #4264fe; 
-  overflow: hidden;
-}
-
-.singlesubmit:hover{
+/* Button Styling */
+.singletohome {
+  display: block;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #4CAF50;
   color: white;
-  transition: 3s;
-  transform: scale(1.1);
-  background: linear-gradient(to right,lightskyblue,darkblue);
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  text-align: center;
 }
 
-.singlecont{
-  position: absolute;
-  top: 680px;
+.singletohome a {
+  text-decoration: none;
+  color: white;
 }
+
+.singletohome:hover {
+  background-color: #45a049;
+}
+
+/* Table Styling */
+.singledetailtable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.singledetailtable th,
+.singledetailtable td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.singledetailtable th {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.singledetailtable td button {
+  padding: 8px 16px;
+  margin: 5px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.singledetailtable td button:hover {
+  background-color: #0b7dda;
+}
+
+.delbutton {
+  background-color: #f44336;
+}
+
+.delbutton:hover {
+  background-color: #e32b2b;
+}
+/* General Form Container Styling */
+.formcontainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Label Styling */
+.formcontlab {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Input and Select Field Styling */
+.formcontinp {
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Submit Button Styling */
+.singlesubmit {
+  padding: 12px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+.singlesubmit:hover {
+  background-color: #45a049;
+}
+
+
+/* sigledetail ends here */
 
 
 
 /* details about places */
 
 
+/* Section Container */
 .infoabout {
-  padding: 40px 0;
-  background: linear-gradient(to right, #e0f7fa, #ffffff);
-  color: #333;
+  width: 90%;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
 
 }
 
+/* Infomerge Flexbox Container */
 .infomerge {
   display: flex;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
+/* Individual Info Center */
 .infocenter {
-  background-color: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  margin: 10px;
+  background-color: #fff;
   padding: 20px;
-  width: 300px;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .infocenter:hover {
   transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Image Styling */
 .infocenter img {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 12px;
+  height: auto;
+  border-radius: 8px;
   margin-bottom: 15px;
 }
 
+/* Heading Styles */
 .infocenter h4 {
   font-size: 18px;
-  color: #0077b6;
+  color: #333;
   margin: 5px 0;
 }
 
 .infocenter h5 {
-  color: #f39c12;
-  font-weight: normal;
-  margin: 8px 0;
+  font-size: 16px;
+  color: #7f8c8d;
+  margin: 5px 0;
 }
 
 .infocenter h3 {
-  color: #009688;
+  font-size: 20px;
+  color: #e74c3c;
   margin: 10px 0;
-  font-size: 22px;
 }
 
+/* Button Styles */
 .infocenter button {
-  background-color: #0077cc;
+  background-color: #3498db;
   color: white;
-  border: none;
   padding: 10px 20px;
-  border-radius: 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .infocenter button:hover {
-  background-color: #005fa3;
+  background-color: #2980b9;
+  transform: translateY(-2px);
 }
-
 
 
 /* details about places end */
@@ -1829,8 +1966,30 @@ h4 {
   align-items: center;
 }
 
+.formcontainer {
+  width: 90%;
+}
 
+.singlesubmit {
+  width: 100%;
+}
 /* details media end */
+
+/* admin dashboard */
+
+#admindash {
+  font-size: 0.9rem;
+}
+
+#admindash th, #admindash td {
+  padding: 8px;
+}
+
+.adminbtu {
+  width: 100%;
+  font-size: 1.1rem;
+}
+
   
 }
 

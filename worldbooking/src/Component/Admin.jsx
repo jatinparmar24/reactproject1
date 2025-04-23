@@ -38,7 +38,7 @@ function Admin(){
             <th>Vehicle</th>
             <th>Destination</th>
             <th>Total</th>
-            <th style={{backgroundColor:"orangered"}}>Delete</th>
+            <th>Delete</th>
             
         </tr>
     </thead>
@@ -60,8 +60,8 @@ function Admin(){
                   <td>{e.mode}</td>
                   <td>{e.country}</td>
                   <td>{totalPrice}</td>
-                  <td style={{ backgroundColor: "orange" }}>
-                    <button onClick={() => del(e.id)} style={{ border: "none", backgroundColor: "orange" }}>Delete</button>
+                  <td >
+                    <button onClick={() => del(e.id)} >Delete</button>
                   </td>
                 </tr>
               );

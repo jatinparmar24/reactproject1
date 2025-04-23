@@ -15,7 +15,7 @@ function Australiadetail(){
       const isLoggedIn = localStorage.getItem('isLoggedIn');
   
       if (isLoggedIn === 'true') {
-        tonavigate('/australiaform');
+        tonavigate('/Australiaform');
       } else {
         tonavigate('/Login');
       }
@@ -55,7 +55,7 @@ function Australiadetail(){
                      <h4>Explore With Family</h4>
                      <h5>5 star Rating</h5>
                      <h3>Price : 18000</h3>
-                    <button>Book Now</button>
+                     <button onClick={handleClick}>Book Now</button>
 
                 </div>
 
@@ -89,7 +89,7 @@ function Australiadetail(){
      <h4>Explore With Family</h4>
      <h5>5 star Rating</h5>
      <h3>Price : 18000</h3>
-    <button>Book Now</button>
+     <button onClick={handleClick}>Book Now</button>
 
 </div>
 
@@ -124,7 +124,7 @@ function Australiadetail(){
      <h4>Explore With Family</h4>
      <h5>5 star Rating</h5>
      <h3>Price : 18000</h3>
-    <button>Book Now</button>
+     <button onClick={handleClick}>Book Now</button>
 
 </div>
 
@@ -158,7 +158,7 @@ function Australiadetail(){
      <h4>Explore With Family</h4>
      <h5>5 star Rating</h5>
      <h3>Price : 18000</h3>
-    <button>Book Now</button>
+     <button onClick={handleClick}>Book Now</button>
 
 </div>
 
