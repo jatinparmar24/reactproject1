@@ -11,13 +11,13 @@ function Login() {
 
   const [signupdata, setsignupdata] = useState(null);
 
-  // Handle input change
+
   function inplog(e) {
     const { name, value } = e.target;
     setlogindata({ ...logindata, [name]: value });
   }
 
-  // Fetch user details from localStorage
+ 
   useEffect(() => {
     const signdetail = JSON.parse(localStorage.getItem("userdetails"));
     if (signdetail) {
@@ -38,23 +38,22 @@ function Login() {
       return;
     }
 
-    // Check if the user has signed up
     if (!signupdata) {
       alert("No user details found. Please sign up first.");
       return;
     }
 
-    // Validate user credentials
+   
     if (signupdata.name !== logindata.name || signupdata.password !== logindata.password) {
       alert("User Not Found or Incorrect Password");
       return;
     }
 
-    // If login is successful, save login state and full user data
+  
     const userData = {
       name: signupdata.name,
-      contact: signupdata.contact || "", // Save contact if it exists
-      email: signupdata.email || "",     // Optional: if you also save email
+      contact: signupdata.contact || "",
+      email: signupdata.email || "",    
       role: "user"
     };
 

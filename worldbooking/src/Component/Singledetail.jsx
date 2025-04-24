@@ -120,7 +120,8 @@ function Singledetail() {
                 }}>Edit</button>
               </td>
               <td>
-                <button onClick={() => delet(formdetail[formdetail.length - 1].id)} className="delbutton">Cancel</button>
+                <button onClick={() => delet(formdetail[formdetail.length - 1].id)} className="delbutton"   disabled={!alertShown}
+                        >Cancel</button>
               </td>
             </tr>
           )}

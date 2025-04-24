@@ -33,11 +33,20 @@ function SignUp() {
     }
 
 
-    const contact = /^[0-9]{10}$/;
-    if (!contact.test(signdata.contact)) {
-      alert("Contact number must be exactly 10 digits and contain no characters.");
-      return;
-    }
+   
+ 
+  const contact = signdata.contact;
+  const contactPattern = /^[1-9][0-9]{9}$/;
+
+  if (!contactPattern.test(contact)) {
+    alert("Contact number must be 10 digits and not start with 0.");
+    return;
+  }
+
+  if (/^(\d)\1{9}$/.test(contact)) {
+    alert("Contact number cannot have all digits the same (e.g. 1111111111, 9999999999).");
+    return;
+  }
 
  
     const nameR = /^[A-Za-z\s]+$/;

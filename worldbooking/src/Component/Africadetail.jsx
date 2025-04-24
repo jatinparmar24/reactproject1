@@ -17,6 +17,7 @@ function Africadetail(){
       if (isLoggedIn == 'true') {
         tonavigate('/Africaform');
       } else {
+        alert("Please Login First")
         tonavigate('/Login');
       }
     };

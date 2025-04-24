@@ -17,6 +17,7 @@ function Northdetail(){
       if (isLoggedIn === 'true') {
         tonavigate('/Northform');
       } else {
+        alert("Please Login First")
         tonavigate('/Login');
       }
     };

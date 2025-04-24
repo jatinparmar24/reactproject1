@@ -17,6 +17,7 @@ function Australiadetail(){
       if (isLoggedIn == 'true') {
         tonavigate('/Australiaform');
       } else {
+        alert("Please Login First")
         tonavigate('/Login');
       }
     };

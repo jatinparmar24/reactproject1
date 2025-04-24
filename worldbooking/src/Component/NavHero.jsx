@@ -4,7 +4,7 @@
 import { Link } from "react-router-dom"
 
 
-import {FcAbout, FcAddImage, FcAddRow, FcAdvance, FcAnswers, FcAreaChart, FcBadDecision,  FcBookmark, FcCalendar, FcCallback, FcCamera, FcComboChart, FcDataRecovery, FcLibrary, FcPackage, FcPhotoReel, FcPlanner, FcPodiumWithoutSpeaker, FcProcess, FcSelfie, FcSettings, FcShop, FcTodoList, FcTrademark, FcTwoSmartphones, FcVideoCall, FcVideoProjector, FcViewDetails} from 'react-icons/fc'
+import {FcAbout, FcAddImage, FcAddRow, FcAdvance, FcAnswers, FcAreaChart, FcBadDecision,   FcCalendar, FcCallback, FcCamera,  FcDataRecovery,  FcPackage, FcPhotoReel, FcPlanner,  FcProcess, FcSelfie, FcSettings,  FcTodoList, FcTwoSmartphones, FcVideoCall, FcVideoProjector, FcViewDetails} from 'react-icons/fc'
 
 
 function NavHero(){
@@ -24,7 +24,7 @@ function NavHero(){
            
 
             <div id="sec1maindiv">
-                <div className="sec1child1"></div>
+                
                 <div className="sec1child2">
                     <div className="hob"> <div className="firstimg">USA</div><img src="cont1.jpeg" alt=""  style={{width:"200px",height:"230px"}}/></div>
 

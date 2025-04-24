@@ -17,6 +17,7 @@ function Southdetail(){
       if (isLoggedIn === 'true') {
         tonavigate('/Southform');
       } else {
+        alert("Please Login First")
         tonavigate('/Login');
       }
     };

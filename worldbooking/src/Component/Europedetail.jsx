@@ -17,6 +17,7 @@ function Europedetail(){
       if (isLoggedIn === 'true') {
         tonavigate('/Europeform');
       } else {
+        alert("Please Login First")
         tonavigate('/Login');
       }
     };

@@ -104,7 +104,7 @@ section{
   text-decoration: underline;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -137,7 +137,7 @@ section{
 
 }
 
-/* Main Heading */
+
 .loginhead {
   width: 100%;
   text-align: center;
@@ -147,7 +147,7 @@ section{
   margin-bottom: 20px;
 }
 
-/* Reusable Box Styling */
+
 .logincenter,
 .loginside {
   flex: 1 1 350px;
@@ -157,20 +157,20 @@ section{
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effect */
+
 .logincenter:hover,
 .loginside:hover {
   transform: translateY(-6px);
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
 }
 
-/* Form Panel */
+
 .logincenter {
   background-color: rgba(255, 255, 255, 0.95);
   max-width: 400px;
 }
 
-/* Input Fields */
+
 .logincenter input[type="text"],
 .logincenter input[type="password"] {
   width: 100%;
@@ -181,7 +181,8 @@ section{
   font-size: 1rem;
 }
 
-/* Submit Button */
+
+
 .loginsub {
   width: 100%;
   padding: 12px;
@@ -351,6 +352,9 @@ section{
 /* navbar ends here */
 
 /* section 1 starts from here */
+
+
+
 #sec1 {
   height: auto;
   min-height: 100vh;
@@ -358,6 +362,22 @@ section{
   padding: 20px;
   font-family: 'Poppins', sans-serif;
 }
+
+/* animation of plane */
+
+.aeromotion{
+  position: relative;
+  transition: transform 0.4s ease;
+  z-index: 10;
+  pointer-events: none;
+  transition: transform 0.2s ease-out;
+
+
+  /* top: 60px;
+  left: 20px; */
+}
+
+/* end of animation */
 
 #sec1head {
   display: block;
@@ -1531,6 +1551,12 @@ h4 {
 .delbutton:hover {
   background-color: #e32b2b;
 }
+
+.delbutton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 /* General Form Container Styling */
 .formcontainer {
   display: flex;
@@ -1592,12 +1618,10 @@ h4 {
   width: 90%;
   margin: 30px auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #f4f4f9;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-
 }
 
 /* Infomerge Flexbox Container */
@@ -1679,6 +1703,11 @@ h4 {
 /* media query */
 
 @media screen and (max-width: 768px) {
+
+  .infocenter {
+    width: 100%;
+  }
+
 
   /* login page */
   #loginpage {
