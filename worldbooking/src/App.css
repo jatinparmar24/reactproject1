@@ -17,7 +17,7 @@ section{
   justify-content: center;
   min-height: 100vh;
   background: linear-gradient(to bottom right, #f6d365, #fda085);
-  padding: 40px 20px;
+  /* padding: 5px; */
   font-family: 'Segoe UI', sans-serif;
 }
 
@@ -26,7 +26,7 @@ section{
   font-size: 2.8rem;
   font-weight: bold;
   color: #2c3e50;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 

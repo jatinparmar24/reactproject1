@@ -1,118 +1,89 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Singledetail() {
-  let tohome = useNavigate();
+  const tohome = useNavigate();
 
   const [formdetail, setformdetail] = useState([]);
   const [alertShown, setAlertShown] = useState(false);
   const [alertRefundShown, setAlertRefundShown] = useState(false);
   const [showform, setshowform] = useState(false);
   const [editdetail, seteditdetail] = useState({});
-  const [paymentMethod, setPaymentMethod] = useState("");
+  const [paymentMode, setPaymentMode] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:3000/tourism").then((res) => {
-      setformdetail(res.data);
-      const last = res.data[res.data.length - 1];
-      if (last?.paymentMethod) {
-        setPaymentMethod(last.paymentMethod);
-        setAlertShown(true);
-      }
-    });
+    axios.get("http://localhost:3000/tourism")
+      .then(res => setformdetail(res.data));
   }, []);
 
   function editdata(e) {
     const { name, value } = e.target;
     seteditdetail({ ...editdetail, [name]: value });
+  }
 
-    if (name === "paymentMethod") {
-      setPaymentMethod(value);
-    }
+  function handlePaymentModeChange(e) {
+    setPaymentMode(e.target.value);  // Update payment mode selection
   }
 
   function editfinaldata(e) {
     e.preventDefault();
-    axios
-      .put(`http://localhost:3000/tourism/${editdetail.id}`, editdetail)
+
+    const updatedData = {
+      ...editdetail,
+      isPaid: false, // Reset to unpaid until booking is confirmed
+      paymentMode: paymentMode,  // Add the selected payment mode here
+    };
+
+    axios.put(`http://localhost:3000/tourism/${editdetail.id}`, updatedData)
       .then(() => {
         alert("Data Updated");
         setshowform(false);
-        axios.get("http://localhost:3000/tourism").then((res) => {
-          setformdetail(res.data);
-        });
+        axios.get("http://localhost:3000/tourism")
+          .then(res => setformdetail(res.data));
       });
   }
 
   function confirmBooking() {
-    if (!paymentMethod) {
-      alert("Please select a payment method before confirming.");
-      return;
+    const lastBooking = formdetail[formdetail.length - 1];
+    const total = lastBooking ? lastBooking.price * lastBooking.day * lastBooking.person : 0;
+
+    if (!paymentMode) {
+      alert("Please select a payment method before confirming the booking.");
+      return; // Prevent booking confirmation if payment mode is not selected
     }
 
-    const lastBooking = formdetail[formdetail.length - 1];
-    const total = lastBooking.price * lastBooking.day * lastBooking.person;
-
-    const confirmed = window.confirm(`Confirm booking using ${paymentMethod}?`);
+    const confirmed = window.confirm("Do you want to confirm your booking?");
 
     if (confirmed) {
-      axios
-        .put(`http://localhost:3000/tourism/${lastBooking.id}`, {
+      if (!alertShown) {
+        alert(`✅ Booking Confirmed\n💸 Amount Paid: $${total}`);
+        setAlertShown(true);
+
+        // Update booking as paid and set payment method
+        const updatedBooking = {
           ...lastBooking,
-          paymentMethod: paymentMethod,
-        })
-        .then(() => {
-          alert(
-            `✅ Booking Confirmed\n💸 Paid: $${total}\n🧾 Method: ${paymentMethod}`
-          );
-          setAlertShown(true);
-        });
-    }
-  }
+          isPaid: true,
+          paymentMode: paymentMode  // Store the selected payment mode in the booking
+        };
 
-  function delet(id) {
-    const lastBooking = formdetail[formdetail.length - 1];
-    const total = lastBooking.price * lastBooking.day * lastBooking.person;
-
-    const confirmed = window.confirm(
-      "Are you sure you want to cancel the booking?"
-    );
-
-    if (confirmed) {
-      axios
-        .delete(`http://localhost:3000/tourism/${id}`)
-        .then(() => {
-          if (!alertRefundShown) {
-            alert(`❌ Booking Cancelled\n💸 Money Refunded: $${total}`);
-            setAlertRefundShown(true);
-          }
-          tohome("/");
-
-          axios.get("http://localhost:3000/tourism").then((res) => {
-            setformdetail(res.data);
+        axios.put(`http://localhost:3000/tourism/${lastBooking.id}`, updatedBooking)
+          .then(() => {
+            axios.get("http://localhost:3000/tourism")
+              .then(res => setformdetail(res.data));
           });
-        })
-        .catch((error) =>
-          alert("Error canceling the booking: " + error.message)
-        );
+      }
     }
   }
+
+  const last = formdetail[formdetail.length - 1];
 
   return (
     <section id="singledata">
       <h1 className="singlehead">Your Booking Details</h1>
 
       <button className="singletohome">
-        <Link
-          to="/"
-          style={{
-            textDecoration: "none",
-            color: "darkblue",
-            fontWeight: "600",
-          }}
-        >
+        <Link to="/" style={{ textDecoration: "none", color: "darkblue", fontWeight: "600" }}>
           To Home Section
         </Link>
       </button>
@@ -129,7 +100,7 @@ function Singledetail() {
             <th>Vehicle</th>
             <th>Total</th>
             <th>Destination</th>
-            <th>Payment</th>
+            <th>Payment Mode</th>
             <th>Confirm</th>
             <th>Edit</th>
             <th>Cancel</th>
@@ -137,67 +108,55 @@ function Singledetail() {
         </thead>
 
         <tbody>
-          {formdetail.length > 0 && (
-            <tr key={formdetail[formdetail.length - 1].id}>
-              <td>{formdetail[formdetail.length - 1].name}</td>
-              <td>{formdetail[formdetail.length - 1].contact}</td>
-              <td>{formdetail[formdetail.length - 1].age}</td>
-              <td>{formdetail[formdetail.length - 1].day}</td>
-              <td>{formdetail[formdetail.length - 1].date}</td>
-              <td>{formdetail[formdetail.length - 1].person}</td>
-              <td>{formdetail[formdetail.length - 1].mode}</td>
+          {last && (
+            <tr key={last.id}>
+              <td>{last.name}</td>
+              <td>{last.contact}</td>
+              <td>{last.age}</td>
+              <td>{last.day}</td>
+              <td>{last.date}</td>
+              <td>{last.person}</td>
+              <td>{last.mode}</td>
+              <td>{last.price * last.day * last.person}</td>
+              <td>{last.country}</td>
               <td>
-                {formdetail[formdetail.length - 1].price *
-                  formdetail[formdetail.length - 1].day *
-                  formdetail[formdetail.length - 1].person}
-              </td>
-              <td>{formdetail[formdetail.length - 1].country}</td>
-              <td>
-                {!alertShown ? (
-                  <select
-                    value={paymentMethod}
-                    onChange={(e) => setPaymentMethod(e.target.value)}
-                  >
-                    <option value="">Select</option>
-                    <option value="Credit Card">Credit Card</option>
-                    <option value="UPI">UPI</option>
-                    <option value="Online">Online</option>
-                  </select>
-                ) : (
-                  <span>{paymentMethod}</span>
+               
+                {!last.isPaid && (
+                  <div>
+                    <label className="formcontlab"></label>
+                    <select value={paymentMode} onChange={handlePaymentModeChange} className="formcontinp">
+                      <option value="">Select Payment Method</option>
+                      <option value="Online">Online</option>
+                      <option value="Credit Card">Credit Card</option>
+                      <option value="UPI">UPI</option>
+                    </select>
+                  </div>
                 )}
               </td>
               <td>
-                <button onClick={confirmBooking} disabled={alertShown}>
-                  Confirm Booking
-                </button>
-              </td>
-              <td>
-              <td>
-               <button
-                 onClick={() => {
-                   seteditdetail(formdetail[formdetail.length - 1]);
-                   setshowform(true);
-                 }}
-                 disabled={alertShown} 
-                 style={{
-                   backgroundColor: alertShown ? "#ccc" : "#007bff",
-                   color: alertShown ? "#666" : "#fff",
-                   cursor: alertShown ? "not-allowed" : "pointer",
-                 }}>
-                    
-                 Edit
-                </button>
-                </td>
-
+                <button onClick={confirmBooking} disabled={last.isPaid}>Confirm Booking</button>
               </td>
               <td>
                 <button
-                  onClick={() =>
-                    delet(formdetail[formdetail.length - 1].id)
-                  }
+                  onClick={() => {
+                    seteditdetail(last);
+                    setshowform(true);
+                  }}
+                  disabled={last.isPaid}
+                  style={{
+                    backgroundColor: last.isPaid ? "#ccc" : "#007bff",
+                    color: last.isPaid ? "#666" : "#fff",
+                    cursor: last.isPaid ? "not-allowed" : "pointer"
+                  }}
+                >
+                  Edit
+                </button>
+              </td>
+              <td>
+                <button
+                  onClick={() => delet(last.id)}
                   className="delbutton"
-                  disabled={!alertShown}
+                  disabled={!last.isPaid}
                 >
                   Cancel
                 </button>
@@ -210,120 +169,51 @@ function Singledetail() {
       {showform && (
         <form onSubmit={editfinaldata}>
           <div className="formcontainer">
-            <label className="formcontlab"> Enter Name</label>
-            <input
-              type="text"
-              name="name"
-              value={editdetail.name}
-              onChange={editdata}
-              placeholder="Enter Your Name"
-              className="formcontinp"
-              disabled={alertShown}
-            />
+            <label className="formcontlab">Enter Name</label>
+            <input type="text" name="name" value={editdetail.name} onChange={editdata} className="formcontinp" />
 
-            <label className="formcontlab"> Enter Contact </label>
-            <input
-              type="text"
-              name="contact"
-              value={editdetail.contact}
-              onChange={editdata}
-              placeholder="Enter Contact Number"
-              className="formcontinp"
-              disabled={alertShown}
-            />
-          </div>
-          <br />
+            <label className="formcontlab">Enter Contact</label>
+            <input type="text" name="contact" value={editdetail.contact} onChange={editdata} className="formcontinp" />
+          </div><br />
 
           <div>
-            <label className="formcontlab"> Enter Age</label>
-            <input
-              type="number"
-              name="age"
-              value={editdetail.age}
-              onChange={editdata}
-              placeholder="Enter Your Age"
-              className="formcontinp"
-              disabled={alertShown}
-            />
+            <label className="formcontlab">Enter Age</label>
+            <input type="number" name="age" value={editdetail.age} onChange={editdata} className="formcontinp" />
 
-            <label className="formcontlab"> Enter Day</label>
-            <input
-              type="number"
-              name="day"
-              value={editdetail.day}
-              onChange={editdata}
-              placeholder="Number Of Day's"
-              className="formcontinp"
-              disabled={alertShown}
-            />
-          </div>
-          <br />
+            <label className="formcontlab">Enter Day</label>
+            <input type="number" name="day" value={editdetail.day} onChange={editdata} className="formcontinp" />
+          </div><br />
 
           <div>
-            <label className="formcontlab"> Enter Date</label>
-            <input
-              type="date"
-              name="date"
-              value={editdetail.date}
-              onChange={editdata}
-              placeholder="Enter Date"
-              className="formcontinp"
-              disabled={alertShown}
-            />
+            <label className="formcontlab">Enter Date</label>
+            <input type="date" name="date" value={editdetail.date} onChange={editdata} className="formcontinp" />
 
-            <label className="formcontlab"> Enter Person's</label>
-            <input
-              type="number"
-              name="person"
-              value={editdetail.person}
-              onChange={editdata}
-              placeholder="Number Of Person's"
-              className="formcontinp"
-              disabled={alertShown}
-            />
-          </div>
-          <br />
+            <label className="formcontlab">Enter Person's</label>
+            <input type="number" name="person" value={editdetail.person} onChange={editdata} className="formcontinp" />
+          </div><br />
 
           <div>
-            <label className="formcontlab"> Mode Of Travel</label>
-            <select
-              name="mode"
-              value={editdetail.mode}
-              onChange={editdata}
-              className="formcontinp"
-              disabled={alertShown}
-            >
+            <label className="formcontlab">Mode Of Travel</label>
+            <select name="mode" value={editdetail.mode} onChange={editdata} className="formcontinp">
               <option value="Select Vehicle">Select Vehicle</option>
               <option value="Train">Train</option>
               <option value="Car">Car</option>
               <option value="Bus">Bus</option>
             </select>
-          </div>
-          <br />
+          </div><br />
 
           <div>
-            <label className="formcontlab"> Payment Method</label>
-            <select
-              name="paymentMethod"
-              value={editdetail.paymentMethod || ""}
-              onChange={editdata}
-              className="formcontinp"
-              disabled={alertShown}
-            >
-              <option value="">Select</option>
+            <label className="formcontlab">Payment Mode</label>
+            <select name="paymentMode" value={editdetail.paymentMode || ""} onChange={editdata} className="formcontinp">
+              <option value="">Select Payment Method</option>
+              <option value="Online">Online</option>
               <option value="Credit Card">Credit Card</option>
               <option value="UPI">UPI</option>
-              <option value="Online">Online</option>
             </select>
-          </div>
-          <br />
+          </div><br />
 
           <div>
-            <input
-              type="submit"
-              className="singlesubmit"
-              disabled={alertShown}
-            />
+            <input type="submit" className="singlesubmit" />
           </div>
         </form>
       )}
