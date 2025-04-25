@@ -21,7 +21,7 @@ section{
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* Heading */
+
 .signhead {
   font-size: 2.8rem;
   font-weight: bold;
@@ -29,7 +29,7 @@ section{
   margin-bottom: 30px;
 }
 
-/* Form Container */
+
 .signcenter {
   background-color: rgba(255, 255, 255, 0.95);
   padding: 10px 10px;
@@ -40,7 +40,7 @@ section{
   animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Labels */
+
 .signcenter label {
   display: block;
   margin-top: 20px;
@@ -49,7 +49,7 @@ section{
   color: #333;
 }
 
-/* Inputs */
+
 .signcenter input[type="text"],
 .signcenter input[type="email"],
 .signcenter input[type="password"],
@@ -68,7 +68,7 @@ section{
   outline: none;
 }
 
-/* Submit Button */
+
 .signsub {
   width: 100%;
   margin-top: 30px;
@@ -87,7 +87,7 @@ section{
   background-color: #e75c3c;
 }
 
-/* Login Link */
+
 .redirect {
   text-align: center;
   margin-top: 20px;
@@ -122,151 +122,24 @@ section{
 /* sign up ends here */
 
 
-/* Login Section Layout */
-#loginpage {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  min-height: 100vh;
-  padding: 40px 20px;
-  background: linear-gradient(to bottom right, #c2e9fb, #a1c4fd);
-  background-attachment: fixed;
-  color: #2c3e50;
-
-}
-
-
-.loginhead {
-  width: 100%;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #2c3e50;
-  margin-bottom: 20px;
-}
-
-
-.logincenter,
-.loginside {
-  flex: 1 1 350px;
-  padding: 30px 25px;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-
-.logincenter:hover,
-.loginside:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
-}
-
-
-.logincenter {
-  background-color: rgba(255, 255, 255, 0.95);
-  max-width: 400px;
-}
-
-
-.logincenter input[type="text"],
-.logincenter input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  margin: 10px 0 20px 0;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-
-
-.loginsub {
-  width: 100%;
-  padding: 12px;
-  background-color: #4264fe;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.loginsub:hover {
-  background-color: #314cd0;
-}
-
-/* Sign Up Button */
-.logincenter button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  background-color: #4264fe;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.logincenter button a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-}
-
-.logincenter button:hover {
-  background-color: #314cd0;
-}
-
-/* Welcome Panel */
-.loginside {
-  background-color: rgba(66, 100, 254, 0.9);
-  color: white;
-  max-width: 400px;
-}
-
-.loginside h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.loginside h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  color: #dbe4ff;
-}
-
-.loginside p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #f2f4ff;
-}
-
-
-
-/* login page ends here */
-
-/* Navbar base styles */
+/* Navbar Styling */
 .navbar {
   width: 100%;
-  padding: 10px 30px; /* Compact navbar padding */
-  background: linear-gradient(to right, #2ecc71, #f39c12); /* Green to yellow gradient */
+  padding: 10px 30px;
+  background: linear-gradient(to right, #2ecc71, #f39c12); 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  z-index: 100;  
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
-
+  height: 60px; 
 }
 
-/* LEFT SIDE */
+
 .navbar-left {
   display: flex;
   align-items: center;
@@ -283,19 +156,17 @@ section{
   color: #2c3e50;
 }
 
-/* NAV LINKS */
+
 .navbar-links {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 20px; /* Adjusted gap */
-  transition: transform 0.3s ease-in-out;
-  position: relative; /* Required for before pseudo-element */
+  gap: 20px;
+  position: relative;
 }
 
-/* Make the links appear as usual */
 .navbar-links li {
-  font-size: 1rem; 
+  font-size: 1rem;
   font-weight: 500;
   color: #2c3e50;
   cursor: pointer;
@@ -305,7 +176,7 @@ section{
   color: #4264fe;
 }
 
-/* Login/Logout link */
+
 .nav-link {
   text-decoration: none;
   color: #2c3e50;
@@ -316,18 +187,12 @@ section{
   color: #4264fe;
 }
 
-/* Username style */
+
 .username {
   font-style: italic;
   color: #4264fe;
 }
 
-/* ICONS */
-.icon {
-  font-size: 1.3rem;
-}
-
-/* HAMBURGER MENU (Mobile) */
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -335,21 +200,86 @@ section{
   color: #2c3e50;
 }
 
-/* Before effect for active navbar */
-.navbar-links.active::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+/* navbar ends here */
+
+
+/* Login Page Section */
+#loginpage {
+  height: calc(100vh - 60px);
+  background: linear-gradient(to right, #2ecc71, #f39c12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+
+}
+
+/* Login Form Container */
+.logincenter {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 400px;
   width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.95); /* Light background */
-  z-index: -1; /* To push behind the links */
-  transition: all 0.3s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
 }
 
 
-/* navbar ends here */
+.logincenter h1 {
+  font-size: 24px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.logincenter h2 {
+  font-size: 16px;
+  color: #2c3e50;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+/* Input Fields */
+.logincenter input[type="text"],
+.logincenter input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+/* Submit & Sign Up Button */
+.loginsub {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2ecc71;
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.loginsub:hover {
+  background-color: #27ae60;
+}
+
+
+
+/* login page ends here */
+
+
 
 /* section 1 starts from here */
 
@@ -1711,24 +1641,28 @@ h4 {
 
   /* login page */
   #loginpage {
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px 10px;
+    padding-top: 80px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
-  .loginhead {
-    font-size: 2rem;
+  .logincenter {
+    padding: 30px 20px;
+    border-radius: 10px;
   }
 
-  .logincenter,
-  .loginside {
-    width: 100%;
-    max-width: 90%;
+  .logincenter h1 {
+    font-size: 20px;
   }
 
-  .loginside {
-    text-align: center;
+  .logincenter input {
+    font-size: 13px;
   }
+
+  .loginsub {
+    font-size: 14px;
+  }
+
 
 
   /* login page end */

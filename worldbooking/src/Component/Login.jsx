@@ -1,7 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { FcGlobe, FcShop, FcCamera} from 'react-icons/fc';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoClose } from 'react-icons/io5';
+
 
 function Login() {
+
+
+   const [user, setUser] = useState(null);
+    const [menuOpen, setMenuOpen] = useState(false);
+  
+    useEffect(() => {
+      const data = JSON.parse(localStorage.getItem('userdetails'));
+      setUser(data);
+    }, []);
+  
+    const logout = () => {
+      localStorage.removeItem('userdetails');
+      localStorage.setItem("isLoggedIn", "false");
+  
+      setUser(null);
+    };
+  
   const tohome = useNavigate();
 
   const [logindata, setlogindata] = useState({
@@ -65,52 +86,53 @@ function Login() {
 
   return (
     <>
-      <section id="loginpage">
-        <h1 className="loginhead">Login Form</h1>
-        <div className="logincenter">
-          <form onSubmit={loginsubmit}>
-            <h1>Enter Name</h1>
-            <input 
-              type="text" 
-              name="name" 
-              onChange={inplog} 
-              placeholder="Enter Your Name" 
-              required 
-            /> 
-            <br /> <br />
 
-            <h1>Enter Password</h1>
-            <input
-              type="password" 
-              name="password"
-              onChange={inplog}
-              placeholder="Enter Your Password"
-              required
-            /> 
-            <br /> <br />
+ {/* Navbar */}
+ <nav className="navbar">
+    <div className="navbar-left">
+      <FcGlobe className="globe-icon" />
+      <h1 className="logo-text">World Tour</h1>
+    </div>
 
-            <input type="submit" value="Login" className="loginsub" />
-            <br /> <br />
+    <ul className={`navbar-links ${menuOpen ? 'active' : ''}`}>
+      <li><Link to='/NavHero' style={{textDecoration:"none",color:"Black"}}>Home</Link></li>
+      <li><Link to='/NavHero' style={{textDecoration:"none",color:"Black"}}>Booking</Link></li>
+      <li><Link to='/NavHero' style={{textDecoration:"none",color:"Black"}}>Services</Link></li>
+      <li>
+          <Link to="/Login" className="nav-link">Login</Link>
+      </li>
+      
+      <li><FcShop className="icon" /></li>
+      <li><FcCamera className="icon" /></li>
+    </ul>
 
-            <h2 style={{ color: "darkblue", fontWeight: "600" }}>Don't have an account?</h2>
+    <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+      {menuOpen ? <IoClose /> : <GiHamburgerMenu />}
+    </div>
+  </nav>
 
-            <Link to="/SignUp" className="loginsub" style={{ textDecoration: "none", color: "black" }}>
-              Sign Up
-            </Link>
-          </form>
-        </div>
+<section id="loginpage">
+ 
 
-        <div className="loginside">
-          <h1>Welcome To</h1>
-          <h2>World Tour</h2>
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti distinctio rem iste quis nam nihil
-            similique. Sunt minima magnam ea, nisi explicabo, obcaecati illo nobis commodi error aliquid, dolorem iusto?
-            Quo eius ab dolores saepe cum quaerat, sint maiores! Fuga rem odio totam nobis molestias dolorum iusto,
-            voluptatum velit maxime!
-          </p>
-        </div>
-      </section>
+  {/* Login Form Section */}
+ 
+    <div className="logincenter">
+      <form onSubmit={loginsubmit}>
+        <h1>Enter Name</h1>
+        <input type="text" name="name" onChange={inplog} required />
+        
+        <h1>Enter Password</h1>
+        <input type="password" name="password" onChange={inplog} required />
+
+        <input type="submit" className="loginsub" value="Login" />
+        
+        <h2>Don't have an account?</h2>
+        <Link to="/SignUp" className="loginsub">Sign Up</Link>
+      </form>
+    </div>
+
+</section>
+
     </>
   );
 }

@@ -42,7 +42,7 @@ function SignUp() {
     alert("Contact number must be 10 digits and not start with 0.");
     return;
   }
-
+ 
   if (/^(\d)\1{9}$/.test(contact)) {
     alert("Contact number cannot have all digits the same (e.g. 1111111111, 9999999999).");
     return;

@@ -41,12 +41,14 @@ function App() {
     <Routes>
       <Route path='/' element={<Layout/>}>
       <Route index element={<NavHero/>}/>
+      <Route path='/NavHero' element={<NavHero/>}/>
       </Route>
     
         
         
       <Route path='/Login' element={<Login/>}/> 
       <Route path='/SignUp' element={<SignUp/>}/>
+      
       <Route path='/Asiaform' element={<Asiaform/>}/>
       <Route path='/Africaform' element={<Africaform/>}/>
       <Route path='/Europeform' element={<Europeform/>}/>
