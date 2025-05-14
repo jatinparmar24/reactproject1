@@ -7,7 +7,7 @@ import { Link } from "react-router-dom"
 import {FcAbout, FcAddImage, FcAddRow, FcAdvance, FcAnswers, FcAreaChart, FcBadDecision,   FcCalendar, FcCallback, FcCamera,  FcDataRecovery,  FcPackage, FcPhotoReel, FcPlanner,  FcProcess, FcSelfie, FcSettings,  FcTodoList, FcTwoSmartphones, FcVideoCall, FcVideoProjector, FcViewDetails} from 'react-icons/fc'
 
 
-function NavHero(){
+function Index(){
 
   
 
@@ -229,4 +229,4 @@ function NavHero(){
     )
 }
 
-export default NavHero
+export default Index

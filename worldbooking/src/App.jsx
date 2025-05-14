@@ -3,7 +3,7 @@ import { Route ,Routes } from 'react-router-dom'
 import './App.css'
 
 import Login from './Component/Login'
-import NavHero from './Component/NavHero'
+import Index from './Component/Index'
 import SignUp from './Component/SignUp'
 
 import Asiaform from './Component/Asiaform'
@@ -40,8 +40,8 @@ function App() {
 
     <Routes>
       <Route path='/' element={<Layout/>}>
-      <Route index element={<NavHero/>}/>
-      <Route path='/NavHero' element={<NavHero/>}/>
+      <Route index element={<Index/>}/>
+      <Route path='/Index' element={<Index/>}/>
       </Route>
     
         
