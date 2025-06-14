@@ -64,6 +64,30 @@
       "price": 9000,
       "isPaid": true,
       "paymentMode": "Credit Card"
+    },
+    {
+      "id": "a962",
+      "name": "jatin",
+      "contact": "9874563254",
+      "age": "25",
+      "day": "25",
+      "date": "2025-06-18",
+      "person": "25",
+      "mode": "Train",
+      "country": "Asia - Cyprus",
+      "price": 9000
+    },
+    {
+      "id": "2f22",
+      "name": "jatin",
+      "contact": "9874563254",
+      "age": "21",
+      "day": "15",
+      "date": "2025-06-20",
+      "person": "5",
+      "mode": "Train",
+      "country": "Asia - Turkey",
+      "price": 9000
     }
   ]
 }

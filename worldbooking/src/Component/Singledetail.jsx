@@ -14,6 +14,7 @@ function Singledetail() {
 
   useEffect(() => {
     axios.get("http://localhost:3000/tourism")
+    // axios.get("http://127.0.0.1:8000/registrations/")
       .then(res => setformdetail(res.data));
   }, []);
 

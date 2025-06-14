@@ -50,15 +50,17 @@ function Asiaform() {
     const formData = { ...insertform, price: 9000 };
     console.log("Submitting form:", formData);
 
-    axios.post("http://localhost:3000/tourism", formData)
-      .then(() => {
-        alert("Data Inserted");
-        navigate("/Singledetail");
+    // axios.post("http://localhost:3000/tourism", formData)
+    axios.post("http://127.0.0.1:8000/registrations/", formData)
+    .then(() => {
+      alert("Data Inserted");
+      navigate("/Singledetail");
       })
       .catch((err) => {
-        alert("Error inserting data. Please try again.");
-        console.error("Submission error:", err);
-      });
+      alert("Error inserting data. Please try again.");
+      console.error("Submission error:", err);
+     });
+
   }
 
   return (
